@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    GORUDO EXPIRIENS
+                    GOLDEN EXPERIENCE GAMING
                 </div>
 
                 <div class="links">
