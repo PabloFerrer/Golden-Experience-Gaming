@@ -19,7 +19,7 @@ class CreateGamesTable extends Migration
             $table->string('name')
             $table->float('price', 4, 2)
             $table->longText('description');
-            
+
             $table->foreign('publisher_id')->references('id')->on('users')
                   ->onDelete('cascade');
         });
