@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTransaccionesTable extends Migration
+class CreateTransactionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,15 @@ class CreateTransaccionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('transacciones', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->float('amount', 4, 2)
+            $table->foreign('buyer_id')->references('id')->on('users')
+                  ->onDelete('cascade');
+            $table->foreign('game_id')->references('id')->on('games')
+                  ->onDelete('cascade');
+
         });
     }
 
@@ -26,6 +32,6 @@ class CreateTransaccionesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transacciones');
+        Schema::dropIfExists('transactions');
     }
 }

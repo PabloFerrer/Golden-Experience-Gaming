@@ -16,6 +16,12 @@ class CreateOpinionsTable extends Migration
         Schema::create('opinions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->longText('body');
+            $table->smallInteger('score')
+            $table->foreign('user_id')->references('id')->on('users')
+                  ->onDelete('cascade');
+            $table->foreign('game_id')->references('id')->on('games')
+                  ->onDelete('cascade');
         });
     }
 
