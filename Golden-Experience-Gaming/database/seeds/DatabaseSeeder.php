@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use \app\User;
+use app\Game;
+use \app\Opinion;
+use app\Transaction;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -12,10 +15,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        $this->create_users()
-        $this->create_games()
-        $this->create_transactions()
-        $this->create_opinions()
+        $this->create_users();
+        $this->create_games();
+        $this->create_transactions();
+        $this->create_opinions();
     }
 
     public function create_users()
@@ -24,31 +27,31 @@ class DatabaseSeeder extends Seeder
           'id' => 1,
           'name' => 'Admin',
           'email' => 'admin@test.es',
-          'password' => 'azsxdc1'.
+          'password' => 'azsxdc1',
           'role' => 0
-        ])
+        ]);
         User::create([
           'id' => 2,
           'name' => 'Client',
           'email' => 'client@test.es',
-          'password' => 'azsxdc1'.
+          'password' => 'azsxdc1',
           'role' => 1
-        ])
+        ]);
         User::create([
           'id' => 3,
           'name' => 'Client2',
           'email' => 'client2@test.es',
-          'password' => 'azsxdc1'.
+          'password' => 'azsxdc1',
           'role' => 1
-        ])
+        ]);
         User::create([
           'id' => 4,
           'name' => 'Publisher',
           'email' => 'publisher@test.es',
-          'password' => 'azsxdc1'.
+          'password' => 'azsxdc1',
           'role' => 2
-        ])
-
+        ]);
+}
         public function create_games()
         {
           $game =Game::create([
@@ -63,8 +66,8 @@ class DatabaseSeeder extends Seeder
                               Bespoke coloring book stumptown typewriter, tumeric
                               retro narwhal meh wolf everyday carry.',
             'publisher_id' => 4
-          ])
-          $game->users()->sync([2,3])
+          ]);
+          $game->users()->sync([2,3]);
           $game = Game::create([
             'id' => 2,
             'name' => 'Fallout 46',
@@ -79,34 +82,34 @@ class DatabaseSeeder extends Seeder
                               yr salvia mustache vape hashtag man bun street art
                               whatever listicle lyft.',
             'publisher_id' => 4
-          ])
-          $game->users()->sync([3])
+          ]);
+          $game->users()->sync([3]);
         }
         public function create_transactions(){
             Transaction::create([
               'amount' => 19.50,
               'game_id' => 1,
               'buyer_id' =>2
-            ])
+            ]);
             Transaction::create([
               'amount' => 19.50,
               'game_id' => 1,
               'buyer_id' =>3
-            ])
+            ]);
             Transaction::create([
               'amount' => 59.99,
               'game_id' => 2,
               'buyer_id' =>3
-            ])
+            ]);
         }
 
         public function create_opinions(){
-            Opinion::create(([
+            Opinion::create([
               'body' => 'Sometimes, it simply doesn\'t work',
               'score' => 2,
               'user_id' => 3,
               'game_id' => 2
-            ]))
+            ]);
         }
     }
-}
+
