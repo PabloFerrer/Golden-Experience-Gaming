@@ -17,10 +17,10 @@ class CreateTransactionsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->float('amount', 4, 2);
-            $table->integer('buyer_id')->unsigned()
+            $table->integer('buyer_id')->unsigned();
             $table->foreign('buyer_id')->references('id')->on('users')
                   ->onDelete('cascade');
-            $table->integer('game_id')->unsigned()
+            $table->integer('game_id')->unsigned();
             $table->foreign('game_id')->references('id')->on('games')
                   ->onDelete('cascade');
 
