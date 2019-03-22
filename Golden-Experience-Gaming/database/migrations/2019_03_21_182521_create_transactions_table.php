@@ -16,7 +16,7 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->float('amount', 4, 2)
+            $table->float('amount', 4, 2);
             $table->foreign('buyer_id')->references('id')->on('users')
                   ->onDelete('cascade');
             $table->foreign('game_id')->references('id')->on('games')

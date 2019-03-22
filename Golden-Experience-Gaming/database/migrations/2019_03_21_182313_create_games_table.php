@@ -16,8 +16,8 @@ class CreateGamesTable extends Migration
         Schema::create('games', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('name')
-            $table->float('price', 4, 2)
+            $table->string('name');
+            $table->float('price', 4, 2);
             $table->longText('description');
 
             $table->foreign('publisher_id')->references('id')->on('users')
