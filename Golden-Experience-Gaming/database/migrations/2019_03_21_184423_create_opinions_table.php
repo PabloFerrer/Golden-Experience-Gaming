@@ -14,7 +14,7 @@ class CreateOpinionsTable extends Migration
     public function up()
     {
         Schema::create('opinions', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->timestamps();
             $table->longText('body');
             $table->smallInteger('score');
