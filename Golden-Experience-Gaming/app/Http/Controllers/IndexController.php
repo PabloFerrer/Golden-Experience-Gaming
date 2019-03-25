@@ -14,6 +14,9 @@ class IndexController extends Controller
      */
     public function index(){
 		$bannergame = Game::orderBy('created_at','desc')->first();
+		if (empty($bannergame)){
+			return view('index');
+		}
         return view('index')->with(compact('bannergame'));
     }
 

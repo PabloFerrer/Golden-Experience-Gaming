@@ -4,7 +4,12 @@
 
             <div class="homepage">
 				<div class="col-md-12">
-					{{ $bannergame->name }}
+					@isset( $bannergame )
+						{{ $bannergame->name }}
+						
+					@else
+						NO HAY JUEGO BANNER
+					@endisset
 				</div>
 				<div class="col-md-12">
 					JUEGOS MÁS RECIENTES
