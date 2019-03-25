@@ -4,16 +4,20 @@
 
             <div class="homepage">
 				<div class="col-md-12">
-					@isset( $indexgames )
+					@isset( $indexgames[0] )
 						{{ $indexgames[0]->name }}
 						
 					@else
 						NO HAY JUEGO BANNER
 					@endisset
+
+				</div>
+				<a href="/catalog">Ver catálogo</a>
+				<div class = "reyeno">
 				</div>
 				<div class="col-md-12">
-					<div class="indexgames">
-						<a href="/catalog">Ver catálogo</a>
+					<div class="indexgames" >
+						
 						<div class="indexgame">
 							@isset( $indexgames[1] )
 								{{ $indexgames[1]->name }}
