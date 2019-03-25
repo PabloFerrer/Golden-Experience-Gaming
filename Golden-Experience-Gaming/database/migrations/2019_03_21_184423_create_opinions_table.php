@@ -14,8 +14,16 @@ class CreateOpinionsTable extends Migration
     public function up()
     {
         Schema::create('opinions', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->timestamps();
+            $table->longText('body');
+            $table->smallInteger('score');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')
+                  ->onDelete('cascade');
+            $table->integer('game_id')->unsigned();
+            $table->foreign('game_id')->references('id')->on('games')
+                  ->onDelete('cascade');
         });
     }
 
