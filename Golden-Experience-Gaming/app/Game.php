@@ -9,8 +9,7 @@ class Game extends Model
     //
 
     public function users(){
-        return $this->belongsToMany('App\User',
-                                    'game_user', 'user_id', 'game_id');
+        return $this->belongsToMany('App\User');
     }
 
     public function publisher(){
