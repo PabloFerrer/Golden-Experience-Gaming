@@ -4,7 +4,7 @@
 
             <div class="homepage">
 				<div class="col-md-12">
-					BANNER DEL JUEGO PRINCIPAL
+					{{ $bannergame->name }}
 				</div>
 				<div class="col-md-12">
 					JUEGOS MÁS RECIENTES

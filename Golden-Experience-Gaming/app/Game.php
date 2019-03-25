@@ -22,6 +22,6 @@ class Game extends Model
     }
 
     public function opinions(){
-        return $this->hasMany('App\Opinion')
+        return $this->hasMany('App\Opinion');
     }
 }

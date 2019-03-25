@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use app\Opinion;
+use App\Opinion;
 
 class OpinionsTableSeeder extends Seeder
 {
