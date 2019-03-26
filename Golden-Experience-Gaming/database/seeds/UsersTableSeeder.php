@@ -17,28 +17,32 @@ class UsersTableSeeder extends Seeder
         'name' => 'Admin',
         'email' => 'admin@test.es',
         'password' => 'azsxdc1',
-        'role' => 0
+        'role' => 0,
+        'wallet' => 0.0
       ]);
       User::create([
         'id' => 2,
         'name' => 'Client',
         'email' => 'client@test.es',
         'password' => 'azsxdc1',
-        'role' => 1
+        'role' => 1,
+        'wallet' => 4.52
       ]);
       User::create([
         'id' => 3,
         'name' => 'Client2',
         'email' => 'client2@test.es',
         'password' => 'azsxdc1',
-        'role' => 1
+        'role' => 1,
+        'wallet' => 0.73
       ]);
       User::create([
         'id' => 4,
         'name' => 'Publisher',
         'email' => 'publisher@test.es',
         'password' => 'azsxdc1',
-        'role' => 2
+        'role' => 2,
+        'wallet' => 560.43
       ]);
     }
 }
