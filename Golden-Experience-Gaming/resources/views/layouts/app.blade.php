@@ -26,8 +26,10 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'GOLDEN EXPERIENCE GAMING') }}
                 </a>
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <img src="{{asset('img/logo.jpeg')}}">
+                </a>
                 
-                <img src="{{asset('img/logo.jpeg')}}">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
