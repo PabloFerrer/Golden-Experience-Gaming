@@ -13,8 +13,12 @@ class IndexController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-		$bannergame = Game::orderBy('created_at','desc')->first();
-        return view('index')->with(compact('bannergame'));
+		$indexgames = Game::orderBy('created_at','desc')->get();
+		if (empty($indexgames)){
+			return view('index');
+		}
+		
+        return view('index')->with(compact('indexgames'));
     }
 
     /**

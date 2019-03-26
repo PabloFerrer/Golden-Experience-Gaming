@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->smallInteger('role'); // 0: Admin | 1: Client | 2: Publisher
+            $table->smallInteger('role')->default(1); // 0: Admin | 1: Client | 2: Publisher
             $table->rememberToken();
             $table->timestamps();
         });
