@@ -77,16 +77,18 @@
         </nav>
 
 
-        <main class="py-4">
+        
 				<div class="row">
 					<div class="col-md-3">
 						@include('includes.menu')
 					</div>
 					<div class="col-md-9">
-						@yield('content')
+						<main class="py-4">
+							@yield('content')
+						</main>
 					</div>
 				</div>            
-        </main>
+        
 
     </div>
 	
