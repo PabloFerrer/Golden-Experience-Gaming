@@ -4,8 +4,8 @@
 	
 	<div class="card-body inmenu">
 		<div class="list-group">
-			<a href="#" class="list-group-item inmenu">
-				Prueba 1
+			<a href="/catalog" class="list-group-item inmenu">
+				Catálogo
 			</a>
 			<a href="#" class="list-group-item inmenu">
 				Prueba 2

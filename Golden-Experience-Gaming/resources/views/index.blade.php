@@ -12,7 +12,7 @@
 					@endisset
 
 				</div>
-				<a href="/catalog">Ver catálogo</a>
+				
 				<div class = "reyeno">
 				</div>
 				<div class="col-md-12">
