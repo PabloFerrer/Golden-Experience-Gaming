@@ -18,8 +18,14 @@
 }
 .indexgames{
 	display: flex;
+	justify-content: space-around;
 }
-.reyeno{
+
+#bannercarousel{
+	text-align: center;
+}
+
+.relleno{
 	height: 70px;
 
 }
