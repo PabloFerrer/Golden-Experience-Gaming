@@ -23,7 +23,9 @@ class GamesTableSeeder extends Seeder
                           3 wolf moon selvage raclette four dollar toast.
                           Bespoke coloring book stumptown typewriter, tumeric
                           retro narwhal meh wolf everyday carry.',
-        'publisher_id' => 4
+        'publisher_id' => 4,
+        'icon_url' => 'https://s3.eu-west-3.amazonaws.com/goldenexperiencegaming/images/default_icon.png',
+        'image_url' => 'https://s3.eu-west-3.amazonaws.com/goldenexperiencegaming/images/default_image.png'
       ]);
       $game->users()->sync([2,3]);
       $game = Game::create([
@@ -40,6 +42,8 @@ class GamesTableSeeder extends Seeder
                           yr salvia mustache vape hashtag man bun street art
                           whatever listicle lyft.',
         'publisher_id' => 4
+        'icon_url' => 'https://s3.eu-west-3.amazonaws.com/goldenexperiencegaming/images/default_icon.png',
+        'image_url' => 'https://s3.eu-west-3.amazonaws.com/goldenexperiencegaming/images/default_image.png'
       ]);
       $game->users()->sync([3]);
     }
