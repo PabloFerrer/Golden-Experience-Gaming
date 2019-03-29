@@ -10,8 +10,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Place routes for clients here
 Route::group(['middleware' => 'client'], function(){
-
-
+	Route::get('/wallet', 'WalletController@index')->name('wallet');
+	Route::post('/wallet/edit', 'WalletController@update');
 });
 
 //Place routes for publishers here here

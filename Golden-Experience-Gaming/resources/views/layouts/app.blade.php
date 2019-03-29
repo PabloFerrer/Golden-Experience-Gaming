@@ -59,7 +59,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="{{ route('wallet') }}">
+										{{ __('Añadir fondos') }}
+									</a>
+									
+									<a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -69,6 +73,8 @@
                                         {{ csrf_field() }}
                                     </form>
                                 </div>
+
+
                             </li>
 							<li id="navmoney" class="nav-item">
 								{{ Auth::user()->wallet }}

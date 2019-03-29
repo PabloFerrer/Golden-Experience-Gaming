@@ -16,7 +16,7 @@ class ClientMiddleware
     public function handle($request, Closure $next)
     {
         if(auth()->user()->role != 1) //not a client
-            return redirect('home')
+            return redirect('home');
 
         return $next($request);
     }
