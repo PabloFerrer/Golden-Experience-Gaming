@@ -70,6 +70,9 @@
                                     </form>
                                 </div>
                             </li>
+							<li id="navmoney" class="nav-item">
+								{{ Auth::user()->wallet }}
+							</li>
                         @endguest
                     </ul>
                 </div>
