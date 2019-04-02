@@ -41,7 +41,7 @@ class GamesTableSeeder extends Seeder
                           Trust fund cray kinfolk intelligentsia lumbersexual
                           yr salvia mustache vape hashtag man bun street art
                           whatever listicle lyft.',
-        'publisher_id' => 4
+        'publisher_id' => 4,
         'icon_url' => 'https://s3.eu-west-3.amazonaws.com/goldenexperiencegaming/images/default_icon.png',
         'image_url' => 'https://s3.eu-west-3.amazonaws.com/goldenexperiencegaming/images/default_image.png'
       ]);

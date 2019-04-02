@@ -19,7 +19,7 @@ class CreateGamesTable extends Migration
             $table->string('name');
             $table->float('price', 6, 2);
             $table->longText('description');
-            $table->string('logo_url');
+            $table->string('icon_url');
             $table->string('image_url');
             
             $table->integer('publisher_id')->unsigned();
