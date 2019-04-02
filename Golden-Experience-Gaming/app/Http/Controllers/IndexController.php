@@ -17,7 +17,6 @@ class IndexController extends Controller
 		if (empty($indexgames)){
 			return view('index');
 		}
-		
         return view('index')->with(compact('indexgames'));
     }
 

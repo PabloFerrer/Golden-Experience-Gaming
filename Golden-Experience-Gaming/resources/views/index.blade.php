@@ -75,7 +75,6 @@
 						<div class="indexgame">
 							@isset( $indexgames[1] )
 								{{ $indexgames[1]->name }}
-								
 							@else
 								No hay suficientes juegos
 							@endisset
