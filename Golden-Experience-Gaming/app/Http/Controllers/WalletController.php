@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Transaction;
 
 class WalletController extends Controller
 {
@@ -22,8 +23,12 @@ class WalletController extends Controller
 		]);
 		$authid = $request->input('authid');
 		$user = User::find($authid);
-		$user->wallet = $request->input('funds') + $user->wallet;
+		$user->wallet = $request->input('funds') + $user->wallet;		
 		$user->save();
+		
+		
+		Transaction::create(array('amount'=>$request->input('funds'), 'buyer_id'=>$user->id, 'game_id'=>null));
+		
 		return back()->with('notification', 'Fondos agregados con éxito.');
 	}
 }

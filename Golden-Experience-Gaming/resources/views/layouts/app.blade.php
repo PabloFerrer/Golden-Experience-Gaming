@@ -59,7 +59,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('wallet') }}">
+                                    <a class="dropdown-item" href="{{ route('cart') }}">
+										{{ __('Ver carrito') }}
+									</a>
+									
+									<a class="dropdown-item" href="{{ route('wallet') }}">
 										{{ __('Añadir fondos') }}
 									</a>
 									

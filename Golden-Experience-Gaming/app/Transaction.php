@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Transaction extends Model
 {
     //
+	
+	protected $fillable = [
+		'amount', 'buyer_id', 'game_id',
+    ];
 
     public function user(){
         return $this->belongsTo('App\User');

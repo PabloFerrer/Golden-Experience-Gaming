@@ -20,7 +20,7 @@ class CreateTransactionsTable extends Migration
             $table->integer('buyer_id')->unsigned();
             $table->foreign('buyer_id')->references('id')->on('users')
                   ->onDelete('cascade');
-            $table->integer('game_id')->unsigned();
+            $table->integer('game_id')->unsigned()->nullable();
             $table->foreign('game_id')->references('id')->on('games')
                   ->onDelete('cascade');
 

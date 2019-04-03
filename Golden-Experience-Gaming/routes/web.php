@@ -14,6 +14,8 @@ Route::get('/game/{id}', 'GameController@index');
 Route::group(['middleware' => 'client'], function(){
 	Route::get('/wallet', 'WalletController@index')->name('wallet');
 	Route::post('/wallet/edit', 'WalletController@update');
+	
+	Route::get('/cart', 'CartController@index')->name('cart');
 });
 
 //Place routes for publishers here here
