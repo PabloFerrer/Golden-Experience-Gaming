@@ -27,8 +27,8 @@
 						<div class="carousel-item">
 							<div class="bannergame">
 								@isset( $indexgames[1] )
-									{{ $indexgames[1]->name }}
 									
+									<a href="/game/{{$indexgames[1]->id}}">{{ $indexgames[1]->name }}</a>
 								@else
 									NO HAY JUEGO BANNER
 								@endisset

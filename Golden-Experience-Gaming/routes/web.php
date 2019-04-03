@@ -8,6 +8,8 @@ Route::get('/index', 'IndexController@index');
 Route::get('/catalog', 'CatalogController@index');
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/game/{id}', 'GameController@index');
+
 //Place routes for clients here
 Route::group(['middleware' => 'client'], function(){
 	Route::get('/wallet', 'WalletController@index')->name('wallet');
