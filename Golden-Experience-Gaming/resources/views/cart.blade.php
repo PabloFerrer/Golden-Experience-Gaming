@@ -23,6 +23,10 @@
 		<div class="col-md-9">
 			<div class="cart">
 				<h3>Productos en el carrito:</h3>
+				
+				{{ Auth::user()->games[0]->name }}
+				{{ Auth::user()->games[1]->name }}
+				{{ Auth::user()->games[2]->name }}
 			</div>
 		</div>
 		
