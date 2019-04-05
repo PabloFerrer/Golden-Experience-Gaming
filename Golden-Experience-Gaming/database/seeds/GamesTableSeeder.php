@@ -27,7 +27,10 @@ class GamesTableSeeder extends Seeder
         'icon_url' => 'https://s3.eu-west-3.amazonaws.com/goldenexperiencegaming/images/default_icon.png',
         'image_url' => 'https://s3.eu-west-3.amazonaws.com/goldenexperiencegaming/images/default_image.png'
       ]);
-      $game->users()->sync([2,3]);
+      $game->users()->sync(array( 
+          2 => array('owned' => 1, 'on_cart' => 0),
+          3 => array('owned' => 1, 'on_cart' => 0)
+        ));
       $game = Game::create([
         'id' => 2,
         'name' => 'Fallout 46',
@@ -45,6 +48,9 @@ class GamesTableSeeder extends Seeder
         'icon_url' => 'https://s3.eu-west-3.amazonaws.com/goldenexperiencegaming/images/default_icon.png',
         'image_url' => 'https://s3.eu-west-3.amazonaws.com/goldenexperiencegaming/images/default_image.png'
       ]);
-      $game->users()->sync([3]);
+      $game->users()->sync(array( 
+          2 => array('owned' => 2, 'on_cart' => 1),
+          3 => array('owned' => 1, 'on_cart' => 0)
+        ));
     }
 }

@@ -17,7 +17,8 @@ class CreateGameUserTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('game_id')->unsigned();
-
+            $table->smallinteger('owned');  // 0 not owned, 1 is owned, 2 is on wishlist
+            $table->smallinteger('on_cart'); //0 not on cart, 1 in cart
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
         });

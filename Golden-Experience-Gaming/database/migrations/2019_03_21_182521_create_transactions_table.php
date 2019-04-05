@@ -23,7 +23,6 @@ class CreateTransactionsTable extends Migration
             $table->integer('game_id')->unsigned()->nullable();
             $table->foreign('game_id')->references('id')->on('games')
                   ->onDelete('cascade');
-
         });
     }
 
