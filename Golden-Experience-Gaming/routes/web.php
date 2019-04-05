@@ -16,6 +16,7 @@ Route::group(['middleware' => 'client'], function(){
 	Route::post('/wallet/edit', 'WalletController@update');
 	
 	Route::get('/cart', 'CartController@index')->name('cart');
+	Route::post('/cart/buy', 'CartController@buy');
 });
 
 //Place routes for publishers here here

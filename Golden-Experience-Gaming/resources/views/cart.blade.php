@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="walletcontent">
+<div class="cartcontent">
 					@if (session('notification'))
 						<div class="alert alert-success">
 							{{ session('notification') }}
@@ -19,35 +19,37 @@
 						</div>
 					@endif
 
-
-	<div class="currentwallet">
-		<h2>En estos momentos, cuenta con {{ Auth::user()->wallet }} €</h2>
-	</div>
-	
-	<div class="addfunds">
-		<h2>¿Cómo desea añadir fondos?</h2>
-		<form action="">
-		  <input type="radio" name="method" value="mastercard"> MasterCard<br>
-		  <input type="radio" name="method" value="visa"> Visa<br>
-		  <input type="radio" name="method" value="paypal"> PayPal
-		</form>
+	<div class="row">
+		<div class="col-md-9">
+			<div class="cart">
+				<h3>Productos en el carrito:</h3>
+			</div>
+		</div>
 		
-		<h2>Inserte la cantidad que desea agregar</h2>
-		
-		<form action="/wallet/edit" method="POST">
-			{{ csrf_field() }}
+		<div class="col-md-3">
+			<div class="cartpay">
+				<h4>Fondos actuales:</h4>
+				<h4>{{ Auth::user()->wallet }} €</h4>
+				
+				
+				<h4>Coste del carrito:</h4>
+				<h4>€</h4>
+				
+				<h4>Dinero tras la transacción:</h4>
+				<h4>{{ Auth::user()->wallet - 0}}€</h4>
+				
+				<form action="/cart/buy" method="POST">
+				{{ csrf_field() }}
 			
-						<input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
-						<div class="form-group">
-							<input type="text" class="form-control" name="funds" id="funds" value="">
-						</div>
-
-
-						<button type="submit" class="btn btn-primary">Guardar</button>
-
-		</form>
+					<button type="submit" class="btn cartbuy">Comprar</button>
+				</form>
+			</div>
+		</div>
 		
 	</div>
+
+		
+	
 </div>
 
 @endsection
