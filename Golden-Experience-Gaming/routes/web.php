@@ -1,11 +1,24 @@
 <?php
 
+use App\Game;
+use Illuminate\Support\Facades\Input;
+
 Auth::routes();
 
 Route::get('/', 'IndexController@index');
 
 Route::get('/index', 'IndexController@index');
 Route::get('/catalog', 'CatalogController@index');
+//Route::get('/search/{name}', 'SearchController@search')->name('search');
+Route::any('/search',function(){
+    $q = Input::get ( 'q' );
+    $game = Game::where('name','LIKE','%'.$q.'%')->get();
+    if(count($game) > 0)
+        return view('search')->withDetails($game)->withQuery ( $q );
+    else return view ('game')->withMessage('No Details found. Try to search again !');
+});
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/game/{id}', 'GameController@index');

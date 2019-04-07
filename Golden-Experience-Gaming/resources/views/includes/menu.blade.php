@@ -4,9 +4,30 @@
 	
 	<div class="card-body inmenu">
 		<div class="list-group">
+
+
+			<!-- <form action="/search/{name}", method="POST" >
+			  <div>
+			    <input type="search" id="miBusqueda" >
+			    <a href="/search/Fallout 46">Buscar juego</a>
+			  </div>
+			</form> -->
+			<form action="/search" method="POST" role="search">
+			    {{ csrf_field() }}
+			    <div class="input-group">
+			        <input type="text" class="form-control" name="q"
+			            placeholder="Buscar juegos"> <span class="input-group-btn">
+			            <button type="submit" class="btn btn-default">
+			                
+			            </button>
+			        </span>
+			    </div>
+			</form>
+
 			<a href="/catalog" class="list-group-item inmenu">
 				Catálogo
 			</a>
+
 			<a href="#" class="list-group-item inmenu">
 				Prueba 2
 			</a>
