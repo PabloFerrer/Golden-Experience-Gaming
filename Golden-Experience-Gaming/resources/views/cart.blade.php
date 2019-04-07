@@ -23,10 +23,35 @@
 		<div class="col-md-9">
 			<div class="cart">
 				<h3>Productos en el carrito:</h3>
-				
-				{{ Auth::user()->games[0]->name }}
-				{{ Auth::user()->games[1]->name }}
-				{{ Auth::user()->games[2]->name }}
+					@foreach ( Auth::user()->games  as $game) 
+						@if ($game->pivot->on_cart == 1)
+
+							<div class="cartgame">
+								<div class="row">
+									<div class="col-md-1">
+									</div>
+									<div class="col-md-3">
+										Foto de juego
+									</div>
+									<div class="col-md-4">
+										<a href="/game/{{$game->id}}"><p>{{ $game->name }}</p></a>
+										<p>{{ $game->price }} €</p>
+									</div>
+									<div class="col-md-3">
+										<form action="/cart/remove" method="POST">
+											{{ csrf_field() }}
+											<input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
+											<input type="hidden" name="gameid" id="gameid" value=" {{ $game->id }}">
+											<button type="submit" class="btn">Quitar</button>
+										</form>
+									</div>
+									<div class="col-md-1">
+									</div>
+									
+								</div>
+							</div>
+						@endif
+					@endforeach
 			</div>
 		</div>
 		
@@ -37,16 +62,27 @@
 				
 				
 				<h4>Coste del carrito:</h4>
-				<h4>€</h4>
+				<h4>
+				<?php
+					$total=0;
+					foreach ( Auth::user()->games  as $game) 
+						if ($game->pivot->on_cart == 1)
+						 $total = $game->price + $total;	
+				?>			
+				</h4>
+				<h4>{{ $total }} €</h4>
 				
 				<h4>Dinero tras la transacción:</h4>
-				<h4>{{ Auth::user()->wallet - 0}}€</h4>
+				<h4>{{ Auth::user()->wallet - $total}}€</h4>
 				
+				@if( $total > 0 )
 				<form action="/cart/buy" method="POST">
 				{{ csrf_field() }}
-			
+					<input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
+					<input type="hidden" name="cost" id="cost" value=" {{ $total }}">
 					<button type="submit" class="btn cartbuy">Comprar</button>
 				</form>
+				@endif
 			</div>
 		</div>
 		

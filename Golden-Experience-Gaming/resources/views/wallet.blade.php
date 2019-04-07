@@ -39,7 +39,14 @@
 			
 						<input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
 						<div class="form-group">
-							<input type="text" class="form-control" name="funds" id="funds" value="">
+							@isset( $neededfunds )
+								<input type="text" class="form-control" name="funds" id="funds" value="{{$neededfunds}}">
+								
+							@else
+								<input type="text" class="form-control" name="funds" id="funds" value="">
+							@endisset
+						
+
 						</div>
 
 

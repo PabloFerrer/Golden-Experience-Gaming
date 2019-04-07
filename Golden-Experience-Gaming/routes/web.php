@@ -17,6 +17,7 @@ Route::group(['middleware' => 'client'], function(){
 	
 	Route::get('/cart', 'CartController@index')->name('cart');
 	Route::post('/cart/buy', 'CartController@buy');
+	Route::post('/cart/remove', 'CartController@remove');
 
 	Route::post('/game/{id}/add','GameController@add');
 });
