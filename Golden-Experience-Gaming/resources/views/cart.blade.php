@@ -75,13 +75,17 @@
 				<h4>Dinero tras la transacción:</h4>
 				<h4>{{ Auth::user()->wallet - $total}}€</h4>
 				
-				@if( $total > 0 )
-				<form action="/cart/buy" method="POST">
-				{{ csrf_field() }}
-					<input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
-					<input type="hidden" name="cost" id="cost" value=" {{ $total }}">
-					<button type="submit" class="btn cartbuy">Comprar</button>
-				</form>
+				@if (Auth::user()->wallet - $total > 0)
+					@if( $total > 0)
+					<form action="/cart/buy" method="POST">
+					{{ csrf_field() }}
+						<input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
+						<input type="hidden" name="cost" id="cost" value=" {{ $total }}">
+						<button type="submit" class="btn cartbuy">Comprar</button>
+					</form>
+					@endif
+				@else
+					<p>Dinero insuficiente para transacción. Por favor, añada más fondos.</p>
 				@endif
 			</div>
 		</div>
