@@ -39,6 +39,14 @@
                               <input type="hidden" name="gameid" id="gameid" value=" {{ $specificgame->id }}">
                               <button type="submit" class="btn addtocart">Añadir al carrito</button>
                         </form>
+						
+						<form action="/game/{{$specificgame->id}}/wish" method="POST">
+                              {{ csrf_field() }}
+                              <input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
+                              <input type="hidden" name="gameid" id="gameid" value=" {{ $specificgame->id }}">
+                              <button type="submit" class="btn addtowish">Añadir a la lista de deseados</button>
+                        </form>
+						
 					@endguest
             		
             		</div>

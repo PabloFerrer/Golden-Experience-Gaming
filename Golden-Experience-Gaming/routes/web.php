@@ -33,6 +33,11 @@ Route::group(['middleware' => 'client'], function(){
 	Route::post('/cart/remove', 'CartController@remove');
 
 	Route::post('/game/{id}/add','GameController@add');
+	Route::post('/game/{id}/wish','GameController@wish');
+	
+	Route::get('/wishlist', 'WishlistController@index')->name('wishlist');
+	Route::post('/wishlist/{id}/add', 'WishlistController@add');
+	Route::post('/wishlist/remove', 'WishlistController@remove');
 });
 
 //Place routes for publishers here here

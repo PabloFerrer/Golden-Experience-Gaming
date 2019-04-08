@@ -63,6 +63,10 @@
 										{{ __('Ver carrito') }}
 									</a>
 									
+									<a class="dropdown-item" href="{{ route('wishlist') }}">
+										{{ __('Ver lista de deseados') }}
+									</a>
+									
 									<a class="dropdown-item" href="{{ route('wallet') }}">
 										{{ __('Añadir fondos') }}
 									</a>

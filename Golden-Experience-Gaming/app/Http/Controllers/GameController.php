@@ -27,9 +27,26 @@ class GameController extends Controller
 			)
 		);		
 
-		return back()->with('notification', 'Añadido al carrito.');;
+		return back()->with('notification', 'Añadido al carrito.');
 	}
 
+	public function wish(Request $request){
+		$authid = $request->input('authid');
+		$gameid = $request->input('gameid');
+		$specificgame = Game::find($gameid);
+		
+		DB::table('game_user')->insert(
+			array(
+				'user_id' => $authid,
+				'game_id' => $gameid,
+				'owned' => 2,
+				'on_cart' => 0
+			)
+		);		
+
+		return back()->with('notification', 'Añadido a la lista de deseados.');;
+	}
+	
    public static function getImage(Request $request){
 	   $filename = $request->get("image_url");
 	   return Storage::disk('s3')->get($filename);
