@@ -30,7 +30,7 @@ class CreateGameGenreTable extends Migration
      */
     public function down()
     {
-        Schema::create('game_genre', function (Blueprint $table) {
+        Schema::dropIfExists('game_genre', function (Blueprint $table) {
             //
         });
     }

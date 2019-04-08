@@ -63,6 +63,16 @@ class GenresTableSeeder extends Seeder
         'name' => 'Grand Strategy'
       ]);
 
+      Genre::create([
+      	'id' => 12,
+        'name' => 'RTS'
+      ]);
+
+      Genre::create([
+      	'id' => 13,
+        'name' => 'Puzzle'
+      ]);
+
 
     }
 }
