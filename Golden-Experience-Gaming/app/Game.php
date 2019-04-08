@@ -23,4 +23,8 @@ class Game extends Model
     public function opinions(){
         return $this->hasMany('App\Opinion');
     }
+
+    public function genres(){
+        return $this->belongsToMany('App\Genre')}
+    }
 }

@@ -119,6 +119,7 @@
 								No hay suficientes juegos
 							@endisset
 						</div>
+						<!-- <img src="{!!url('https://s3.eu-west-3.amazonaws.com/goldenexperiencegaming/images/default_image.png')!!}"/> -->
 					</div>
 				</div>
 			</div>
