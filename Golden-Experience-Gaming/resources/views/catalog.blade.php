@@ -6,7 +6,7 @@
         <div class="col-md-4">
            
            @isset( $indexgames[0] )
-				{{ $indexgames[0]->name }}
+				<a href="/game/{{$indexgames[0]->id}}">{{ $indexgames[0]->name }}</a>
 									
 			@else
 				NO HAY JUEGO 
@@ -15,7 +15,8 @@
         <div class="col-md-4">
             
            @isset( $indexgames[1] )
-				{{ $indexgames[1]->name }}
+
+				<a href="/game/{{$indexgames[1]->id}}">{{ $indexgames[1]->name }}</a>
 									
 			@else
 				NO HAY JUEGO 
