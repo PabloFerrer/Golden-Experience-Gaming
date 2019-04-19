@@ -94,6 +94,28 @@ nav > .container{
   background-color: #333235;
 }
 
+/* Catalog CSS */
+
+.borderless td, .borderless th {
+    border: none;
+    color: #f9d740;
+}
+
+.borderless th{
+    font-size: 2em;
+}
+
+.game-image{
+  max-width: 12vw;
+  height: auto;
+}
+
+.game-image-container{
+  width: 1%;
+  white-space:nowrap;
+}
+
+/* Carousel CSS */
 
 #bannercarousel{
 	text-align: center;

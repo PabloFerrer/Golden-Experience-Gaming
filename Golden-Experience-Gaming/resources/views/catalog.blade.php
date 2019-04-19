@@ -1,8 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+
+  <table class="table borderless">
+
+    <thead>
+      <tr>
+        <th scope="col" colspan=6>Game Catalogue</th>
+      </tr>
+    </thead>
+    @foreach ($indexgames as $game)
+      @if ($game->id % 3 == 0)
+        <tr>
+      @endif
+          <td class="game-image-container">
+            <a href="/game/{{$game->id}}">
+              <img src="{{env('IMAGE_SERVER')}}{{$game->image_url}}" class="game-image">
+            </a>
+          </td>
+          <td>
+            <h3>{{ $game->name }}</h3>
+            <p>{{ $game->synopsis }}</p>
+          </td>
+      @if ($game->id % 3 == 2)
+        </tr>
+      @endif
+    @endforeach
+  </table>
+
+    <!-- <div class="row justify-content-center">
         <div class="col-md-4">
 
       @isset( $indexgames[0] )
@@ -25,6 +51,5 @@
 			<br/>
 			<img src="{{asset('img/Fallout76.png')}}" width="80" height="80" >
         </div>
-    </div>
-</div>
+    </div> -->
 @endsection
