@@ -25,10 +25,10 @@
     @include('includes.topbar')
     <div class="container-fluid" id="content-container">
       <div class="row">
-  	     <div class="col-md-3">
+  	     <div class="col-md-2">
   		       @include('includes.menu')
   	     </div>
-  			 <div class="col-md-9">
+  			 <div class="col-md-10">
   			      <main class="py-4">
   			           @yield('content')
   	          </main>
