@@ -45,6 +45,14 @@
    min-height: 100% !important;
  }
 
+/* Index CSS */
+.game-in-row img{
+  max-width: 12vw;
+}
+
+.index-table{
+  max-width: 80vw;
+}
 
 
 .gametitle{
@@ -82,10 +90,17 @@
   width: auto;
 }
 
+#title{
+  font-size: 3.5em;
+  vertical-align: bottom;
+  padding-top:0.75em
+}
+
 nav > .container{
   max-height: 100%;
   max-width: 100%;
 }
+
 /* Left Menu CSS */
 
 #left-menu{

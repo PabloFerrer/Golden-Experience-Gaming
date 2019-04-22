@@ -2,11 +2,11 @@
 <nav class="navbar fixed-top navbar-expand-md navbar-light navbar-laravel bar" id="top-menu">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'GOLDEN EXPERIENCE GAMING') }}
-        </a>
-        <a class="navbar-brand" href="{{ url('/') }}">
             <img src="{{asset('img/logo.jpeg')}}" id="logo">
-          </a>
+        </a>
+        <h2 class="navbar-brand" href="{{ url('/') }}" id="title">
+            Golden Experience Gaming
+        </h2>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
