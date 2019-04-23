@@ -1,25 +1,17 @@
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<div class="card">
+<div class="card" id="left-menu">
 	<div class="card-header topmenu">Menú</div>
-	
+
 	<div class="card-body inmenu">
 		<div class="list-group">
 
-
-			<!-- <form action="/search/{name}", method="POST" >
-			  <div>
-			    <input type="search" id="miBusqueda" >
-			    <a href="/search/Fallout 46">Buscar juego</a>
-			  </div>
-			</form> -->
 			<form action="/search" method="POST" role="search">
 			    {{ csrf_field() }}
 			    <div class="input-group">
 			        <input type="text" class="form-control" name="q"
-			            placeholder="Buscar juegos"> <span class="input-group-btn">
-			            <button type="submit" class="btn btn-default">
-			                
-			            </button>
+							placeholder="Buscar juegos">
+							<span class="input-group-btn">
+			            <button type="submit" class="btn btn-default"> </button>
 			        </span>
 			    </div>
 			</form>
@@ -49,4 +41,3 @@
 		</div>
 	</div>
 </div>
-
