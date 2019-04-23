@@ -33,6 +33,7 @@
 					@guest
 					
 					@else
+						@if(Auth::user()->role == 1)
                         <form action="/game/{{$specificgame->id}}/add" method="POST">
                               {{ csrf_field() }}
                               <input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
@@ -47,6 +48,7 @@
                               <button type="submit" class="btn addtowish">Añadir a la lista de deseados</button>
                         </form>
 						
+						@endif
 					@endguest
             		
             		</div>
