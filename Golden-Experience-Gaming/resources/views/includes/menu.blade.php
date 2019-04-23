@@ -35,9 +35,25 @@
 			<a href="#" class="list-group-item inmenu">
 				Prueba 3
 			</a>
-			<a href="#" class="list-group-item inmenu">
-				Prueba 3
-			</a>
+
+				@guest
+
+				@else
+
+				@if(Auth::user()->role == 2)
+                <li class="list-group-item inmenu">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Juegos en venta</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="/">Subir juego</a>
+                      <a class="dropdown-item" href="/">Borrar juego</a>
+                      <a class="dropdown-item" href="/">Editar juego juego</a>
+                      
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </li>
+                @endif
+                @endguest
 		</div>
 	</div>
 </div>
