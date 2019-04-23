@@ -59,7 +59,26 @@
 	@endif
 	
 	@if(Auth::user()->role == 2)
-		
+		@if(Auth::user()->wallet > 0)
+			<div class="retrievefunds">
+				<h2>¿Qué cantidad de dinero desea retirar?</h2>
+				
+
+				<form action="/wallet/edit" method="POST">
+					{{ csrf_field() }}
+					<h2>Retirar una cantidad específica</h2>
+					<input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
+					<input type="text" name="funds" id="funds" value="">
+					<button type="submit" class="btn btn-primary">Retirar</button>
+				</form>
+				<form action="/wallet/edit" method="POST">
+					{{ csrf_field() }}
+					<input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
+					<input type="hidden" name="funds" id="funds" value=" {{ Auth::user()->wallet }}">
+					<button type="submit" class="btn btn-primary">Retirar todo el dinero</button>
+				</form>
+			</div>
+		@endif
 	@endif
 	
 </div>

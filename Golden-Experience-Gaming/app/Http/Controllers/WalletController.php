@@ -31,4 +31,14 @@ class WalletController extends Controller
 		
 		return back()->with('notification', 'Fondos agregados con éxito.');
 	}
+	
+	public function retrieve(Request $request){
+		$authid = $request->input('authid');
+		$user = User::find($authid);
+		$user->wallet = $user->wallet - $request->input('funds');
+		$user->save();
+		
+		Transaction::create(array('amount'=>$request->input('funds'), 'buyer_id'=>$user->id, 'game_id'=>null));
+		return back()->with('notification', 'Fondos retirados con éxito.');
+	}
 }
