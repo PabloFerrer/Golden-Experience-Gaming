@@ -43,7 +43,7 @@ Route::group(['middleware' => 'client'], function(){
 //Place routes for publishers here here
 Route::group(['middleware' => 'publisher'], function(){
 	Route::get('/wallet', 'WalletController@index')->name('wallet');
-	Route::post('/wallet/edit', 'WalletController@retrieve');
+	Route::post('/wallet/retrieve', 'WalletController@retrieve');
 	Route::get('/gameseller', 'GameSellerController@index');
 
 });
