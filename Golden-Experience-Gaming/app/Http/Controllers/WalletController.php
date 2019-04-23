@@ -12,6 +12,10 @@ class WalletController extends Controller
 		return view('wallet');
 	}
 	
+	public function royalties(){
+		return view('wallet');
+	}
+	
 	public function update(Request $request){
 
 		

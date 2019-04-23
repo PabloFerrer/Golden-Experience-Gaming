@@ -51,7 +51,7 @@
 							@endif
 							
 							@if(Auth::user()->role == 2)
-								<a class="dropdown-item" href="{{ route('wallet') }}">
+								<a class="dropdown-item" href="{{ route('royalties') }}">
 								{{ __('Retirar fondos') }}</a>								
 							@endif
 
