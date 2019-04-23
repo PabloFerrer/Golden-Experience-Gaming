@@ -44,6 +44,7 @@ Route::group(['middleware' => 'client'], function(){
 Route::group(['middleware' => 'publisher'], function(){
 	Route::get('/wallet', 'WalletController@index')->name('wallet');
 	Route::post('/wallet/edit', 'WalletController@update');
+	Route::get('/gameseller', 'GameSellerController@index');
 
 });
 

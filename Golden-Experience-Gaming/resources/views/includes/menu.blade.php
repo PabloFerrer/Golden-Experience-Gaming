@@ -41,15 +41,15 @@
 				@else
 
 				@if(Auth::user()->role == 2)
-                <li class="list-group-item inmenu">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Juegos en venta</a>
+                <li class="nav-link dropdown">
+                    <a class="list-group-item inmenu" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Juegos en venta</a>
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="/">Subir juego</a>
                       <a class="dropdown-item" href="/">Borrar juego</a>
-                      <a class="dropdown-item" href="/">Editar juego juego</a>
+                      <a class="dropdown-item" href="/">Editar juego </a>
                       
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Separated link</a>
+                      <a class="dropdown-item" href="/gameseller">Mis juegos en venta</a>
                     </div>
                 </li>
                 @endif
