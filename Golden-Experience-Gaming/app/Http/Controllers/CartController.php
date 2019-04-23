@@ -25,10 +25,16 @@ class CartController extends Controller
 			foreach ($user->games as $games){
 				if($games->pivot->on_cart ==1){
 					Transaction::create(array('amount'=>$games->price, 'buyer_id'=>$user->id, 'game_id'=>$games->id));
+					Transaction::create(array('amount'=>-($games->price), 'buyer_id'=>$games->publisher_id, 'game_id'=>$games->id));
+					
+					$publisher = User::find($games->publisher_id);
+					
+					$publisher->wallet = $publisher->wallet + $games->price;
 					
 					$user->wallet = $wallet - $total;		
 					$games->save();
 					$user->save();					
+					$publisher->save();
 					DB::update('update game_user set on_cart = 0, owned = 1 where user_id = ? and game_id = ? and on_cart = 1 limit 1', [$user->id, $games->id]);
 					
 
