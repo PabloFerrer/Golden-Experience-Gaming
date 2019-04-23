@@ -51,7 +51,7 @@ class GamesTableSeeder extends Seeder
                           whatever listicle lyft.',
         'publisher_id' => 4,
         'icon_url' => 'default_icon.png',
-        'image_url' => 'default_image.png'
+        'image_url' => 'game_2_image.png'
       ]);
       $game->users()->sync(array(
           2 => array('owned' => 2, 'on_cart' => 1),
