@@ -55,20 +55,9 @@
 }
 
 
-.gametitle{
-	margin-top:3vh;
-	font: small-caps 100%/200% serif;
-	font-weight: bold;
-	font-size: 1.4em;
-}
 
-.addtocart{
-	margin-top: 50vh;
-}
-.topmenu{
-	background-color: #F3D60E;
-	color:#5B2C70;
-}
+
+
 .inmenu{
 	color: #F3D60E;
 	background-color: #5B2C70;
@@ -78,7 +67,9 @@
 	justify-content: space-around;
 }
 
-/* Game page CSS */
+
+
+
 
 
 /* Top Menu CSS */
@@ -102,6 +93,11 @@
 nav > .container{
   max-height: 100%;
   max-width: 100%;
+}
+
+.topmenu{
+	background-color: #F3D60E;
+	color:#5B2C70;
 }
 
 /* Left Menu CSS */
@@ -151,6 +147,95 @@ nav > .container{
 
 	background-color: #F7F7F7;
 }
-.gamepage{
 
+
+/* Game page CSS */
+.game-main-page-image{
+  max-width: 100% !important;
+  max-height: auto !important;
+}
+
+.game-page-title{
+  font: small-caps 100%/200% serif;
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+.game-price{
+  font-weight:bold;
+}
+
+.game-synopsis{
+
+}
+
+.review-space{
+  margin-top: 7.5vh;
+}
+
+.review-space p{
+  text-align:center;
+  width:100%;
+}
+
+.game-button {
+  position: relative;
+
+  display: block;
+  margin: 30px auto;
+  padding: .75em 1em;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+  background-color: #5B2C70;
+  color: #ecf0f1;
+
+  transition: background-color .3s;
+}
+
+.game-button:hover, .game-button:focus {
+  background-color: #f9d740;
+}
+
+.game-button > * {
+  position: relative;
+}
+
+.game-button span {
+  display: block;
+  padding: 24px 48px;
+}
+
+.game-button:before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, .3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.game-button:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width .2s ease-out, padding-top .2s ease-out;
 }
