@@ -78,6 +78,9 @@
 	justify-content: space-around;
 }
 
+/* Game page CSS */
+
+
 /* Top Menu CSS */
 
 #top-menu{
@@ -86,14 +89,14 @@
 }
 
 #logo{
-  height: 4em;
+  height: 4.5vw;
   width: auto;
 }
 
 #title{
-  font-size: 3.5em;
+  font-size: 3.25vw;
   vertical-align: bottom;
-  padding-top:0.75em
+  padding-top:5vh;
 }
 
 nav > .container{
