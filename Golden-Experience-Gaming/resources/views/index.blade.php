@@ -93,15 +93,15 @@
            <table class="table borderless index-table">
              <thead>
                <tr>
-                 <th scope="col" colspan=6>Another Category</th>
+                 <th scope="col" colspan=6>Recent releases</th>
                </tr>
              </thead>
                <tr>
                @for ($i = 0; $i < 6; $i++)
                  <td class="game-in-row">
-   							@isset( $indexgames[$i] )
-                   <a href="/game/{{$indexgames[$i]->id}}">
-                     <img src="{{env('IMAGE_SERVER')}}{{$indexgames[$i]->image_url}}"
+   							@isset( $recentgames[$i] )
+                   <a href="/game/{{$recentgames[$i]->id}}">
+                     <img src="{{env('IMAGE_SERVER')}}{{$recentgames[$i]->image_url}}"
                           class="game-image">
                    </a>
    							@else

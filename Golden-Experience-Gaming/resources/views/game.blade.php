@@ -2,12 +2,12 @@
 
 @section('content')
 @isset( $specificgame )
-            <div class="gamepage">
+            <div class="gamepage container-float">
 					@if (session('notification'))
 						<div class="alert alert-success">
 							{{ session('notification') }}
 						</div>
-					@endif	
+					@endif
 
 
 					@if (count($errors) > 0)
@@ -19,45 +19,87 @@
 							</ul>
 						</div>
 					@endif
+
             	<div class="row">
-                        <div class="col-md-3">
-                              <img src="{{asset('img/Fallout76.png')}}"></a> 
-                        </div> 
-            		<div class="col-md-2 gametitle">
-                        <p>{{ $specificgame->name }}</p>
-                        <p>Genero</p>
-            		</div>
-            		<div class="col-md-1 gametitle"><p>{{ $specificgame->price }}</p></div>	
-            		<div class="col-md-2">
-					
+                <div class="col-md-7">
+                    <img src="{{env('IMAGE_SERVER')}}{{ $specificgame->image_url}}"
+                         class="game-main-page-image">
+                </div>
+            		<div class="col-md-5">
+                  <div class="row">
+                      <h2 class="game-page-title">{{ $specificgame->name }}</h2>
+                  </div>
+                <div class="row">
+                    <p class="game-price">${{ $specificgame->price }}</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <p class="game-synopsis">{{ $specificgame->synopsis }}</p>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+
+
+
+
 					@guest
-					
+
 					@else
 						@if(Auth::user()->role == 1)
-                        <form action="/game/{{$specificgame->id}}/add" method="POST">
-                              {{ csrf_field() }}
-                              <input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
-                              <input type="hidden" name="gameid" id="gameid" value=" {{ $specificgame->id }}">
-                              <button type="submit" class="btn addtocart">Añadir al carrito</button>
-                        </form>
-						
-						<form action="/game/{{$specificgame->id}}/wish" method="POST">
-                              {{ csrf_field() }}
-                              <input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
-                              <input type="hidden" name="gameid" id="gameid" value=" {{ $specificgame->id }}">
-                              <button type="submit" class="btn addtowish">Añadir a la lista de deseados</button>
-                        </form>
-						
+          <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3">
+                  <form action="/game/{{$specificgame->id}}/add" method="POST">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="authid" id="authid"
+                           value=" {{ Auth::user()->id }}">
+                    <input type="hidden" name="gameid" id="gameid"
+                           value=" {{ $specificgame->id }}">
+                      <button type="submit" class="btn game-button">Add to Cart</button>
+                  </form>
+              </div>
+              <div class="col-3">
+  						    <form action="/game/{{$specificgame->id}}/wish" method="POST">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="authid" id="authid"
+                           value=" {{ Auth::user()->id }}">
+                    <input type="hidden" name="gameid" id="gameid"
+                           value=" {{ $specificgame->id }}">
+                    <button type="submit" class="btn game-button">Add to Wishlist</button>
+                  </form>
+              </div>
+              <div class="col-3"></div>
+            </div>
+
 						@endif
 					@endguest
-            		
             		</div>
+            </div>
 
 
             	</div>
+              <br>
+              <div class="row">
+                    <div class="col-md-7">
+                      {{$specificgame->description}}
+                    </div>
+                    <div class="col-md-5"></div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 review-space">
+                      <p>No opinions for this game yet.</p>
+                </div>
+                <div class="col-md-2"></div>
+              </div>
 
             </div>
+
+
 @else
-      El juego no está en la base de datos
+      Invalid game ID
 @endisset
 @endsection

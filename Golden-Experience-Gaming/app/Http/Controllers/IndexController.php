@@ -14,10 +14,11 @@ class IndexController extends Controller
      */
     public function index(){
 		$indexgames = Game::orderBy('created_at','desc')->get();
-		if (empty($indexgames)){
-			return view('index');
-		}
-        return view('index')->with(compact('indexgames'));
+    $recentgames = Game::latest()->take(6)->get()->reverse();
+		// if (empty($indexgames)){
+		// 	return view('index');
+		// }
+    return view('index')->with(compact('indexgames', 'recentgames'));
     }
 
     /**

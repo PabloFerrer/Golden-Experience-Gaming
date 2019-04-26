@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
         'id' => 1,
         'name' => 'Admin',
         'email' => 'admin@test.es',
-        'password' => 'azsxdc1',
+        'password' => Hash::make('azsxdc1'),
         'role' => 0,
         'wallet' => 0.0
       ]);
@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
         'id' => 2,
         'name' => 'Client',
         'email' => 'client@test.es',
-        'password' => 'azsxdc1',
+        'password' => Hash::make('azsxdc1'),
         'role' => 1,
         'wallet' => 4.52
       ]);
@@ -32,7 +32,7 @@ class UsersTableSeeder extends Seeder
         'id' => 3,
         'name' => 'Client2',
         'email' => 'client2@test.es',
-        'password' => 'azsxdc1',
+        'password' => Hash::make('azsxdc1'),
         'role' => 1,
         'wallet' => 0.73
       ]);
@@ -40,7 +40,7 @@ class UsersTableSeeder extends Seeder
         'id' => 4,
         'name' => 'Publisher',
         'email' => 'publisher@test.es',
-        'password' => 'azsxdc1',
+        'password' => Hash::make('azsxdc1'),
         'role' => 2,
         'wallet' => 560.43
       ]);
