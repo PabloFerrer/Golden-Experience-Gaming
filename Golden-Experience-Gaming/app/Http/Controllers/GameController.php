@@ -13,13 +13,12 @@ class GameController extends Controller
 	public function index($id){
 		$specificgame = Game::find($id);
 		
-		$opinions = Opinion::where('game_id', $id)->get('user_id');
-		$reviewers = Array();
-		foreach($opinions as $opinion){
-			$reviewer = User::where('id', $opinion->user_id)->first();
-			$reviewers[] = $reviewer;
-		}
-   		return view('game')->with(compact('specificgame', 'reviewers'));
+		$reviews = DB::table('opinions')
+			->join('users', 'opinions.user_id', '=', 'users.id')
+			->where('opinions.game_id', '=', $id)
+			->get();
+
+   		return view('game')->with(compact('specificgame', 'reviews'));
 	}
 	
 	public function add(Request $request){
