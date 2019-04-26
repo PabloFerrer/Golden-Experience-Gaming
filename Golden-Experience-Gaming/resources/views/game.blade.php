@@ -86,6 +86,50 @@
                     </div>
                     <div class="col-md-5"></div>
               </div>
+				
+				<h3>Opiniones de los usuarios</h3>
+				<div class="row">
+					<div class="col-md-9">
+						<div class="reviews-section">
+						
+							<div class="review">
+								<div class="row">
+									<div class="col-md-1">
+										<div class="review-score">
+											<h4>4.6</h4>
+										</div>
+									</div>
+									<div class="col-md-11">
+										<div class="review-user">
+											Persona normal
+										</div>
+										<div class="review-content">
+											Basura infumable, quiero mi dinero de vuelta
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="review">
+								<div class="row">
+									<div class="col-md-1">
+										<div class="review-score">
+											<h4>10<h4>
+										</div>
+									</div>
+									<div class="col-md-11">
+										<div class="review-user">
+											NotPablo
+										</div>
+										<div class="review-content">
+											No escuchéis a los haters porque es que de verdad, la peña critica sin saber y  porque son unos haters y el juego no está tan mal, ¿no? O sea sí vale no es en plan genial pero es entretenido joder a mi me entretiene y en plan, eso, que es que la gente critica sin haber jugado y vale el juego de 10 no es pero es divertido.
+										</div>										
+									</div>
+								</div>
+							</div>							
+						</div>
+					</div>
+				</div>
 
 
               <div class="row">
