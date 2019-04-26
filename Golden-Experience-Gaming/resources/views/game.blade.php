@@ -91,24 +91,29 @@
 				<div class="row">
 					<div class="col-md-9">
 						<div class="reviews-section">
-						
-							<div class="review">
-								<div class="row">
-									<div class="col-md-1">
-										<div class="review-score">
-											<h4>4.6</h4>
+							@foreach ($specificgame->opinions as $opinion)
+								<div class="review">
+									<div class="row">
+										<div class="col-md-1">
+											<div class="review-score">
+												<h4>{{$opinion->score}}</h4>
+											</div>
 										</div>
-									</div>
-									<div class="col-md-11">
-										<div class="review-user">
-											Persona normal
-										</div>
-										<div class="review-content">
-											Basura infumable, quiero mi dinero de vuelta
+										<div class="col-md-11">
+											<div class="review-user">
+												@foreach ($reviewers as $reviewer)
+													@if ($reviewer->id == $opinion->user_id)
+														{{$reviewer->name}}
+													@endif
+												@endforeach
+											</div>
+											<div class="review-content">
+												{{$opinion->body}}
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
+							@endforeach
 							
 							<div class="review">
 								<div class="row">
@@ -130,16 +135,6 @@
 						</div>
 					</div>
 				</div>
-
-
-              <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8 review-space">
-                      <p>No opinions for this game yet.</p>
-                </div>
-                <div class="col-md-2"></div>
-              </div>
-
             </div>
 
 

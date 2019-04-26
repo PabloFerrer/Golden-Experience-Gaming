@@ -34,6 +34,7 @@ Route::group(['middleware' => 'client'], function(){
 
 	Route::post('/game/{id}/add','GameController@add');
 	Route::post('/game/{id}/wish','GameController@wish');
+	Route::post('/game/{id}/review', 'OpinionController@review');
 	
 	Route::get('/wishlist', 'WishlistController@index')->name('wishlist');
 	Route::post('/wishlist/{id}/add', 'WishlistController@add');
