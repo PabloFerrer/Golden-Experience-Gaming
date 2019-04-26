@@ -63,6 +63,16 @@ class GameController extends Controller
    public function game(){
 
    }
+   	public function showcreategame(){
+   	
+
+   	return view('createGame');
+   }
+
+   
+
+	public function createGame(Request $request){
 
 
+	}
 }

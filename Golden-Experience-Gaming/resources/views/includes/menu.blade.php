@@ -44,7 +44,7 @@
                 <li class="nav-link dropdown">
                     <a class="list-group-item inmenu" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Juegos en venta</a>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="/">Subir juego</a>
+                      <a class="dropdown-item" href="/creategame">Subir juego</a>
                       <a class="dropdown-item" href="/">Borrar juego</a>
                       <a class="dropdown-item" href="/">Editar juego </a>
                       
