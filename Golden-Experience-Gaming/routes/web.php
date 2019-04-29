@@ -27,7 +27,9 @@ Route::get('/game/{id}', 'GameController@index');
 Route::group(['middleware' => 'client'], function(){
 	Route::get('/wallet', 'WalletController@index')->name('wallet');
 	Route::post('/wallet/edit', 'WalletController@update');
-	
+
+  Route::get('/library', 'UserController@getLibrary')->name('library');;
+
 	Route::get('/cart', 'CartController@index')->name('cart');
 	Route::post('/cart/buy', 'CartController@buy');
 	Route::post('/cart/remove', 'CartController@remove');
@@ -35,7 +37,7 @@ Route::group(['middleware' => 'client'], function(){
 	Route::post('/game/{id}/add','GameController@add');
 	Route::post('/game/{id}/wish','GameController@wish');
 	Route::post('/game/{id}/review', 'OpinionController@review');
-	
+
 	Route::get('/wishlist', 'WishlistController@index')->name('wishlist');
 	Route::post('/wishlist/{id}/add', 'WishlistController@add');
 	Route::post('/wishlist/remove', 'WishlistController@remove');

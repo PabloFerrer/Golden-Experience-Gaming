@@ -17,43 +17,34 @@
 			</form>
 
 			<a href="/catalog" class="list-group-item inmenu">
-				Catálogo
+				Store
 			</a>
 
-			<a href="#" class="list-group-item inmenu">
-				Prueba 2
-			</a>
-			<a href="#" class="list-group-item inmenu">
-				Prueba 3
-			</a>
-			<a href="#" class="list-group-item inmenu">
-				Prueba 3
-			</a>
-			<a href="#" class="list-group-item inmenu">
-				Prueba 3
-			</a>
-			<a href="#" class="list-group-item inmenu">
-				Prueba 3
-			</a>
+			@guest
 
-				@guest
+			@else
 
-				@else
+			@if(Auth::user()->role == 1)
+
+			<a class="list-group-item inmenu" href="{{ route('library') }}">
+			{{ __('My Library') }}</a>
+
+			<a class="list-group-item inmenu" href="{{ route('wishlist') }}">
+			{{ __('My Wishlist') }}</a>
+
+			@endif
 
 				@if(Auth::user()->role == 2)
-                <li class="nav-link dropdown">
-                    <a class="list-group-item inmenu" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Juegos en venta</a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="/creategame">Subir juego</a>
-                      <a class="dropdown-item" href="/">Borrar juego</a>
-                      <a class="dropdown-item" href="/">Editar juego </a>
-                      
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="/gameseller">Mis juegos en venta</a>
-                    </div>
-                </li>
-                @endif
-                @endguest
+
+				<a class="list-group-item inmenu" href="#">
+				{{ __('My Games') }}</a>
+
+				<a class="list-group-item inmenu" href="/creategame">
+				{{ __('Upload Game') }}</a>
+
+        @endif
+        @endguest
+
 		</div>
 	</div>
 </div>

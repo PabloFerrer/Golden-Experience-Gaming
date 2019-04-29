@@ -39,7 +39,7 @@ class User extends Authenticatable
 
     public function games(){
         return $this->belongsToMany('App\Game',
-                                    'game_user', 'user_id', 'game_id')->withPivot('on_cart', 'owned'); 
+                                    'game_user', 'user_id', 'game_id')->withPivot('on_cart', 'owned');
     }
 
     public function opinions(){
