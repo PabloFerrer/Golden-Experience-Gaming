@@ -36,8 +36,7 @@
 
 				@if(Auth::user()->role == 2)
 
-				<a class="list-group-item inmenu" href="#">
-				{{ __('My Games') }}</a>
+                      <a class="dropdown-item" href="/gameseller/{{ Auth::user()->id }}">Mis juegos en venta</a>
 
 				<a class="list-group-item inmenu" href="/creategame">
 				{{ __('Upload Game') }}</a>

@@ -6,7 +6,7 @@
 
     <thead>
       <tr>
-        <th scope="col" colspan=6>Game Catalogue</th>
+        <th scope="col" colspan=6>My Game Catalogue</th>
       </tr>
     </thead>
     @foreach ($indexgames as $game)
