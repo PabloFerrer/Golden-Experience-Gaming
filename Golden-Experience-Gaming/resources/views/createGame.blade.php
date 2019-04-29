@@ -1,27 +1,47 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="/action_page.php">
+    
+    @if (session('notification'))
+    <div class="alert alert-success">
+    {{ session('notification') }}
+    </div>
+    @endif  
+
+
+    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+    </div>
+    @endif
+    <form action="/creategame/finished" method="POST">
+        {{ csrf_field() }}
     <div class="form-group">
         <label for="name">Name:</label>
-        <input type="name" class="form-control" id="name">
+        <input type="text" class="form-control" id="name" value="" name="name">
     </div>
     <div class="form-group">
         <label for="price">Price:</label>
-        <input type="price" class="form-control" id="price">
+        <input type="int" class="form-control" id="price" value="" name="price">
     </div>
     <div class="form-group">
         <label for="description">Description:</label>
-        <input type="description" class="form-control" id="description">
+        <input type="text" class="form-control" name="description" id="description" value="">
     </div>
     <div class="form-group">
         <label for="synopsis">Synopsis:</label>
-        <input type="synopsis" class="form-control" id="synopsis">
+        <input type="text" class="form-control" id="synopsis" value="" name="synopsis">
     </div>
-    <div class="form-group">
+
+    <!--    LO COMENTO HASTA QUE SEPA COMO IMPLEMENTAR ESTA MOVIDA
+        <div class="form-group">
         <label for="Genre">Genre: </label>
         <select name="ad" >
-        <option selected>----</option>
+        <option selected></option>
                 <option value="G2">RPG</option>
         <option value="G3">FPS</option>
         <option value="G4">TPS</option>
@@ -33,14 +53,12 @@
         <option value="G10">Grand-Strategy</option>
         <option value="G11">RTS</option>
         <option value="G12">Puzzle</option>
-        
-
         </select>
         <button type="submit" onclick="">Añadir Genero</button>
-    </div>
+    </div>-->
     <div class="form-group">
-        <label for="synopsis">Synopsis:</label>
-        <input type="synopsis" class="form-control" id="synopsis">
+        <label for="genre">Genre:</label>
+        <input type="text" class="form-control" id="genre" value="" name="genre">
     </div>
 
     <button type="submit" class="btn btn-default">Submit</button>

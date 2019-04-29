@@ -20,4 +20,6 @@ class PublisherMiddleware
 
         return $next($request);
     }
+
+    
 }
