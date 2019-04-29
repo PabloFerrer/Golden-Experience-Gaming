@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Game;
+use DB;
 
 class GameSellerController extends Controller
 {
-    public function index(){
-		$indexgames = Game::orderBy('created_at','desc')->get();
+    public function index($publisher_id){
+		
+		#$indexgames = DB::table('games')->select('name')->where('publisher_id', '=', $publisher_id )->get();
+		$indexgames = Game::where('publisher_id',$publisher_id)->get();
+		#dd($indexgames);
 		if (empty($indexgames)){
 			return view('gameSeller');
 		}

@@ -49,7 +49,8 @@
                       <a class="dropdown-item" href="/">Editar juego </a>
                       
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="/gameseller">Mis juegos en venta</a>
+                      <a class="dropdown-item" href="/gameseller/{{ Auth::user()->id }}">Mis juegos en venta</a>
+
                     </div>
                 </li>
                 @endif
