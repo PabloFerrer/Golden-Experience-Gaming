@@ -48,8 +48,8 @@ Route::group(['middleware' => 'publisher'], function(){
 	Route::get('/royalties', 'WalletController@royalties')->name('royalties');
 	Route::post('/royalties/retrieve', 'WalletController@retrieve');
 	Route::get('/gameseller/{id_publisher}', 'GameSellerController@index');
-	Route::get('/creategame', 'GameController@showcreategame');
-	Route::post('/creategame/finished', 'GameController@creategame');
+	Route::get('/creategame', 'GameSellerController@showcreategame');
+	Route::post('/creategame/finished', 'GameSellerController@creategame');
 
 
 });
