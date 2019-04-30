@@ -85,7 +85,7 @@
   							@isset( $indexgames[$i] )
                   <a href="/game/{{$indexgames[$i]->id}}">
                     <img src="{{env('IMAGE_SERVER')}}{{$indexgames[$i]->image_url}}"
-                         class="game-image">
+                         class="game-image" title="{{ $indexgames[$i]->name }}">
                   </a>
   							@else
   								<img src="{{env('IMAGE_SERVER')}}default_image.png" class="game-image">
@@ -107,10 +107,10 @@
    							@isset( $recentgames[$i] )
                    <a href="/game/{{$recentgames[$i]->id}}">
                      <img src="{{env('IMAGE_SERVER')}}{{$recentgames[$i]->image_url}}"
-                          class="game-image">
+                          class="game-image" title="{{ $recentgames[$i]->name }}">
                    </a>
    							@else
-   								<img src="{{env('IMAGE_SERVER')}}default_image.png" class="game-image">
+   								<img src="{{env('IMAGE_SERVER')}}default_image.png" class="game-image" >
    							@endisset
                  </td>
                @endfor
