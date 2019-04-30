@@ -90,33 +90,36 @@
 				<h3>Opiniones de los usuarios</h3>
 				<div class="row">
 					<div class="col-md-9">
-						@if(Auth::user()->role == 1)
-						<div class="review-write">
-							<form action="/game/{{$specificgame->id}}/review" method="POST">
-								{{ csrf_field() }}
-								<h4>Deje su opinión</h4>
-								<input type="hidden" name="authid" id="authid"
-									   value=" {{ Auth::user()->id }}">
-								<input type="hidden" name="gameid" id="gameid"
-										value=" {{ $specificgame->id }}">
-								<select name="score">
-									<option value=""></option>
-									<option value="10">10</option>
-									<option value="9">9</option>
-									<option value="8">8</option>
-									<option value="7">7</option>
-									<option value="6">6</option>
-									<option value="5">5</option>
-									<option value="4">4</option>
-									<option value="3">3</option>
-									<option value="2">2</option>
-									<option value="1">1</option>
-								</select>
-								<input type="text" name="reviewbody" id="reviewbody" value={{ old('reviewbody', '') }}>
-								<button type="submit" class="btn game-button">Send</button>
-							</form>
-						</div>
-						@endif
+						@guest
+						@else
+							@if(Auth::user()->role == 1)
+							<div class="review-write">
+								<form action="/game/{{$specificgame->id}}/review" method="POST">
+									{{ csrf_field() }}
+									<h4>Deje su opinión</h4>
+									<input type="hidden" name="authid" id="authid"
+										   value=" {{ Auth::user()->id }}">
+									<input type="hidden" name="gameid" id="gameid"
+											value=" {{ $specificgame->id }}">
+									<select name="score">
+										<option value=""></option>
+										<option value="10">10</option>
+										<option value="9">9</option>
+										<option value="8">8</option>
+										<option value="7">7</option>
+										<option value="6">6</option>
+										<option value="5">5</option>
+										<option value="4">4</option>
+										<option value="3">3</option>
+										<option value="2">2</option>
+										<option value="1">1</option>
+									</select>
+									<input type="text" name="reviewbody" id="reviewbody" value={{ old('reviewbody', '') }}>
+									<button type="submit" class="btn game-button">Send</button>
+								</form>
+							</div>
+							@endif
+						@endguest
 					
 						<div class="reviews-section">
 							@foreach ($reviews as $review)
