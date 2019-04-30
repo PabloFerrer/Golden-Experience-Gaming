@@ -40,6 +40,8 @@
 
 				<a class="list-group-item inmenu" href="/creategame">
 				{{ __('Upload Game') }}</a>
+				<a class="list-group-item inmenu" href="/editgame">
+				{{ __('Edit Game') }}</a>				
 
         @endif
         @endguest

@@ -20,11 +20,21 @@ class GameSellerController extends Controller
         return view('gameSeller')->with(compact('indexgames'));
     }
 
-   	public function showcreategame(){
-   	
+    public function showeditgame(){
+    	$games = Game::all();
+    	return view('editgame')->with(['games'=>$games]);
+    }
 
-   	return view('createGame');
-   }
+    public function editgame(Request $request){
+
+    	$gameid = Input::get('games');
+    	$game = DB::table('games')->where('id','=',$gameid)->get();
+    	return view('editgametext')->with(['game'=>$game]);
+    }
+
+   	public function showcreategame(){
+   		return view('createGame');
+   	}
 
    
 
@@ -49,9 +59,16 @@ class GameSellerController extends Controller
 		$synopsis = $request->input('synopsis');
 		$genre = $request->input('genre');
 		$publisher_id = Auth::id();
-		DB::table('games')->insert([['name' => $name,'price'=>$price,'description'=>$description,
-			'synopsis'=>$synopsis,'icon_url'=>'default_icon.png','image_url'=>'default_image.png','publisher_id'=>$publisher_id]]);
-		$gameid = DB::table('games')->where('name','=',$name)->value('id');
+		$game = new Game();
+		$game->name = $name;
+		$game->price = $price;
+		$game->description = $description;
+		$game->synopsis = $synopsis;
+		$game->icon_url = 'default_icon.png';
+		$game->image_url = 'default_image.png';
+		$game->publisher_id = $publisher_id;
+		$game->save();
+		$gameid=$game->id;
 		$genreid = DB::table('genres')->where('name','=',$genre)->value('id');
 		DB::table('game_genre')->insert([['game_id'=>$gameid,'genre_id'=>$genreid]]);
 		
