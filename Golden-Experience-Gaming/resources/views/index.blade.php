@@ -15,8 +15,10 @@
 					<div class="carousel-inner">
 						<div class="carousel-item active">
 							<div class="bannergame">
-								@isset( $indexgames[0] )
-									{{ $indexgames[0]->name }}
+								@isset( $bannergames[0] )
+									<a href="/game/{{$bannergames[0]->id}}">
+									    <img src="{{env('IMAGE_SERVER')}}{{$bannergames[0]->image_url}}" class="game-image" title="{{ $bannergames[0]->name }}">
+									</a>
 								@else
 									NO HAY JUEGO BANNER
 								@endisset
@@ -26,8 +28,9 @@
 						<div class="carousel-item">
 							<div class="bannergame">
 								@isset( $indexgames[1] )
-
-									<a href="/game/{{$indexgames[1]->id}}">{{ $indexgames[1]->name }}</a>
+									<a href="/game/{{$bannergames[1]->id}}">
+									    <img src="{{env('IMAGE_SERVER')}}{{$bannergames[1]->image_url}}" class="game-image" title="{{ $bannergames[1]->name }}">
+									</a>
 								@else
 									NO HAY JUEGO BANNER
 								@endisset
@@ -36,9 +39,10 @@
 
 						<div class="carousel-item">
 							<div class="bannergame">
-								@isset( $indexgames[2] )
-									{{ $indexgames[2]->name }}
-
+								@isset( $bannergames[2] )
+									<a href="/game/{{$bannergames[2]->id}}">
+									    <img src="{{env('IMAGE_SERVER')}}{{$bannergames[2]->image_url}}" class="game-image" title="{{ $bannergames[2]->name }}">
+									</a>
 								@else
 									NO HAY JUEGO BANNER
 								@endisset
@@ -47,9 +51,10 @@
 
 						<div class="carousel-item">
 							<div class="bannergame">
-								@isset( $indexgames[3] )
-									{{ $indexgames[3]->name }}
-
+								@isset( $bannergames[3] )
+									<a href="/game/{{$bannergames[3]->id}}">
+									    <img src="{{env('IMAGE_SERVER')}}{{$bannergames[3]->image_url}}" class="game-image" title="{{ $bannergames[3]->name }}">
+									</a>
 								@else
 									NO HAY JUEGO BANNER
 								@endisset

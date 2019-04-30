@@ -39,7 +39,7 @@ class WalletController extends Controller
 	public function retrieve(Request $request){
 		
 		$this->validate($request, [
-			'funds' => ['required','numeric', 'max:'.(int)$request->input('maxfunds')],
+			'funds' => ['required','numeric', 'max:'.(float)$request->input('maxfunds')],
 		], [
 			'funds.required' => 'Inserte la cantidad de dinero que desea retirar.',
 			'funds.numeric' => 'Inserte un número.',
