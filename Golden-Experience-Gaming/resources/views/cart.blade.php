@@ -75,7 +75,7 @@
 				<h4>Dinero tras la transacción:</h4>
 				<h4>{{ Auth::user()->wallet - $total}}€</h4>
 				
-				@if (Auth::user()->wallet - $total > 0)
+				@if (Auth::user()->wallet - $total >= 0)
 					@if( $total > 0)
 					<form action="/cart/buy" method="POST">
 					{{ csrf_field() }}
