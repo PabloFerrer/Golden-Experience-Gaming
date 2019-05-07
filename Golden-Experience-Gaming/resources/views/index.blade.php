@@ -27,7 +27,7 @@
 
 						<div class="carousel-item">
 							<div class="bannergame">
-								@isset( $indexgames[1] )
+								@isset( $bestsellinggames[1] )
 									<a href="/game/{{$bannergames[1]->id}}">
 									    <img src="{{env('IMAGE_SERVER')}}{{$bannergames[1]->image_url}}" class="game-image" title="{{ $bannergames[1]->name }}">
 									</a>
@@ -82,10 +82,10 @@
               <tr>
               @for ($i = 0; $i < 6; $i++)
                 <td class="game-in-row">
-  							@isset( $indexgames[$i] )
-                  <a href="/game/{{$indexgames[$i]->id}}">
-                    <img src="{{env('IMAGE_SERVER')}}{{$indexgames[$i]->image_url}}"
-                         class="game-image" title="{{ $indexgames[$i]->name }}">
+  							@isset( $bestsellinggames[$i] )
+                  <a href="/game/{{$bestsellinggames[$i]->id}}">
+                    <img src="{{env('IMAGE_SERVER')}}{{$bestsellinggames[$i]->image_url}}"
+                         class="game-image" title="{{ $bestsellinggames[$i]->name }}">
                   </a>
   							@else
   								<img src="{{env('IMAGE_SERVER')}}default_image.png" class="game-image">

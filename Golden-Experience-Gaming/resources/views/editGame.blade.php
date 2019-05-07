@@ -19,6 +19,7 @@
     </div>
     @endif
 
+    <form action="/editgametext" method="GET">
     <div>Elija el juego que desea editar</div>
     <select name="games" id="games">
         @foreach($games as $game)
@@ -26,6 +27,6 @@
         @endforeach
     </select>
     <br>
-    <button class="btn btn-default">Editar</button>
-    
+    <button type="submit" class="btn btn-default">Editar</button>
+    </form >
 @endsection
