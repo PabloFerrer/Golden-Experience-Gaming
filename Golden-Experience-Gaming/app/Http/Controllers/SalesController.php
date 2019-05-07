@@ -17,6 +17,7 @@ class SalesController extends Controller
 			->join('games', 'transactions.game_id', '=', 'games.id')
 			->select('games.name')
 			->where('games.publisher_id', '=', $id)
+			->where('transactions.amount', '>', 0)
 			->groupBy('games.name')
 			->orderByRaw('COUNT(*) DESC')
 			->first();
