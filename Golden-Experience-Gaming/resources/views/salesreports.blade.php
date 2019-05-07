@@ -20,9 +20,11 @@
 					@endif
 
 	<h2>Informe de ventas totales</h2>
-	
-	<h3>Juego mejor vendido: {{$bestselling->name}}</h3>
-	
+	@isset( $bestselling->name )
+		<h3>Juego mejor vendido: {{$bestselling->name}}</h3>
+	@else
+		<h3>Aún no se ha vendido ningún juego</h3>
+	@endisset
 	<table style="width:100%">
 		<tr>
 			<th>Date</th>
