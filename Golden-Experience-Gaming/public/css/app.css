@@ -68,7 +68,104 @@
 }
 
 
+/* Game Search CSS*/
 
+#game-search-container{
+}
+
+#game-search-table{
+    max-width:100%;
+}
+
+.gamerow td{
+    white-space: nowrap;  /** added **/
+    color: #f9d740;
+    max-width:100%;
+}
+
+.gamerow td:last-child{
+    width:100%;
+}
+
+.game-search-title{
+    font-size:1.2em;
+}
+
+.game-search-synopsis{
+    font-size:0.8em;
+}
+
+/*Wishlist CSS*/
+
+#wishlist-table{
+
+}
+
+.button-td:last-child{
+
+}
+
+.wishlist-button {
+  position: relative;
+
+  display: block;
+  margin: 0.4em auto;
+  padding: .75em 1em;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+  background-color: #5B2C70;
+  color: #ecf0f1;
+
+  transition: background-color .3s;
+}
+
+.wishlist-button:hover, .wishlist-button:focus {
+  background-color: #f9d740;
+}
+
+.wishlist-button > * {
+  position: relative;
+}
+
+.wishlist-button span {
+  display: block;
+  padding: 24px 48px;
+}
+
+.wishlist-button:before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, .3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.wishlist-button:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width .2s ease-out, padding-top .2s ease-out;
+}
 
 
 

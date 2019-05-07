@@ -10,6 +10,7 @@
 					@endif
 
 
+
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
 							<ul>
@@ -39,7 +40,6 @@
                     </div>
                     <div class="col-md-2"></div>
                 </div>
-
 
 
 
@@ -86,8 +86,9 @@
                     </div>
                     <div class="col-md-5"></div>
               </div>
-				
-				<h3>Opiniones de los usuarios</h3>
+
+        <br>
+				<h3>User Reviews</h3>
 				<div class="row">
 					<div class="col-md-9">
 						@guest
@@ -120,7 +121,7 @@
 							</div>
 							@endif
 						@endguest
-					
+
 						<div class="reviews-section">
 							@foreach ($reviews as $review)
 								<div class="review">
@@ -140,7 +141,7 @@
 										</div>
 									</div>
 								</div>
-							@endforeach							
+							@endforeach
 						</div>
 					</div>
 				</div>
