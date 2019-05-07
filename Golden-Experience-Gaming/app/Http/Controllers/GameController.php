@@ -18,8 +18,14 @@ class GameController extends Controller
 			->join('users', 'opinions.user_id', '=', 'users.id')
 			->where('opinions.game_id', '=', $id)
 			->get();
+			
+		$average = DB::table('opinions')
+			->where('opinions.game_id', '=', $id)
+			->avg('score');
+			
+		$average = round($average, 1);
 
-   		return view('game')->with(compact('specificgame', 'reviews'));
+   		return view('game')->with(compact('specificgame', 'reviews', 'average'));
 	}
 	
 	public function add(Request $request){

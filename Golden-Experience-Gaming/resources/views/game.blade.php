@@ -29,6 +29,9 @@
                   <div class="row">
                       <h2 class="game-page-title">{{ $specificgame->name }}</h2>
                   </div>
+                  <div class="row">
+                      <h2 class="game-page-average">Nota de los usuarios: {{$average}}</h2>
+                  </div>
                 <div class="row">
                     <p class="game-price">${{ $specificgame->price }}</p>
                 </div>
