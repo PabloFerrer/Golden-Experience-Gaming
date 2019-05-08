@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <table class="table borderless">
+  <table class="table borderless py-4">
 
     <thead>
       <tr>

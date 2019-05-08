@@ -2,7 +2,7 @@
 
 @section('content')
 @isset( $specificgame )
-            <div class="gamepage container-float">
+            <div class="py-4 gamepage container-float">
 					@if (session('notification'))
 						<div class="alert alert-success">
 							{{ session('notification') }}

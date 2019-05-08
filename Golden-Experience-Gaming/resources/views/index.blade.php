@@ -2,7 +2,7 @@
 
 @section('content')
 
-            <div class="homepage">
+            <div class="py-4 homepage">
 				<div id="bannercarousel" class="carousel slide" data-ride="carousel">
 
 				    <ol class="carousel-indicators">

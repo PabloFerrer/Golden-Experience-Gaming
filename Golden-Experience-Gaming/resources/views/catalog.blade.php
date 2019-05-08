@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <table class="table borderless">
+  <table class="py-4 table borderless">
 
     <thead>
       <tr>
@@ -10,8 +10,8 @@
       </tr>
     </thead>
     @foreach ($indexgames as $game)
-      @if ($game->id % 3 == 0)
-        <tr>
+      @if ($game->id % 3 == 1)
+        <tr class="catalogue-row">
       @endif
           <td class="game-image-container">
             <a href="/game/{{$game->id}}">
@@ -19,10 +19,10 @@
             </a>
           </td>
           <td>
-            <h3>{{ $game->name }}</h3>
-            <p>{{ $game->synopsis }}</p>
+            <h3 class="catalogue-title">{{ $game->name }}</h3>
+            <p class="catalogue-synopsis">{{ $game->synopsis }}</p>
           </td>
-      @if ($game->id % 3 == 2)
+      @if ($game->id % 3 == 0)
         </tr>
       @endif
     @endforeach

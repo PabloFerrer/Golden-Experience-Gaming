@@ -29,7 +29,7 @@
   		       @include('includes.menu')
   	     </div>
   			 <div class="col-md-10">
-  			      <main class="py-4">
+  			      <main id="content">
   			           @yield('content')
   	          </main>
   			 </div>

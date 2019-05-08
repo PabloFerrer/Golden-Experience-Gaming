@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="salescontent">
+<div class="py-4 salescontent">
 					@if (session('notification'))
 						<div class="alert alert-success">
 							{{ session('notification') }}
 						</div>
-					@endif	
+					@endif
 
 
 					@if (count($errors) > 0)
@@ -32,16 +32,16 @@
 			<th>User</th>
 			<th>Game</th>
 		</tr>
-		@foreach ( $salesreport  as $report) 
+		@foreach ( $salesreport  as $report)
 			<tr>
 				<th>{{ $report->created_at }}</th>
 				<th>{{ $report->amount }}</th>
 				<th>{{ $report->username }}</th>
-				<th>{{ $report->gamename }}</th>		
+				<th>{{ $report->gamename }}</th>
 			</tr>
 		@endforeach
 	</table>
-	
+
 </div>
 
 @endsection

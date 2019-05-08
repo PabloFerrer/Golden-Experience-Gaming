@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    
+<div class="py-4">
     @if (session('notification'))
     <div class="alert alert-success">
     {{ session('notification') }}
     </div>
-    @endif  
+    @endif
 
 
     @if (count($errors) > 0)
@@ -28,5 +28,6 @@
     </select>
     <br>
     <button type="submit" class="btn btn-default">Editar</button>
-    </form >
+    </form>
+</div>
 @endsection

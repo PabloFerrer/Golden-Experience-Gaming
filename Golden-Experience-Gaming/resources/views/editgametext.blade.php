@@ -1,12 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    
+<div class="py-4">
+
+
     @if (session('notification'))
     <div class="alert alert-success">
     {{ session('notification') }}
     </div>
-    @endif  
+    @endif
 
 
     @if (count($errors) > 0)
@@ -40,7 +42,6 @@
         <input type="hidden" value="{{$game->id}}" id="id" name="id">
     <button type="submit" class="btn btn-default">Edit</button>
     </form>
+</div>
 
-
-    
 @endsection

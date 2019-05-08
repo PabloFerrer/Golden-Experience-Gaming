@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container-fluid" id="game-search-container">
+<div class="py-4 container-fluid" id="game-search-container">
     <div class="row col-md-6">
 			    @if(isset($details))
 			    <h3> Results for the query: <strong>"{{ $query }}"</strong></h3>

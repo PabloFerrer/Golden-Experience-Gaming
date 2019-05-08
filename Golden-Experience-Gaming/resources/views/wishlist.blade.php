@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="wishlistcontent">
+<div class="wishlistcontent py-4">
 					@if (session('notification'))
 						<div class="alert alert-success">
 							{{ session('notification') }}
@@ -24,35 +24,6 @@
 				<h3>Wishlist:</h3>
 					@foreach ( Auth::user()->games  as $game)
 						@if ($game->pivot->owned == 2)
-							<!-- <div class="wishgame">
-								<div class="wishpic">
-									Foto del juego
-								</div>
-								<div class="wishname">
-									<p>{{$game->name}}</p>
-								</div>
-
-								@if ($game->pivot->on_cart == 1)
-									<p>Tiene este juego en el carrito</p>
-								@else
-
-									<form action="/wishlist/{$game->id}/add" method="POST">
-										{{ csrf_field() }}
-										<input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
-										<input type="hidden" name="gameid" id="gameid" value=" {{ $game->id }}">
-										<button type="submit" class="btn">Añadir al carrito</button>
-									</form>
-
-								@endif
-
-
-								<form action="/wishlist/remove" method="POST">
-									{{ csrf_field() }}
-									<input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
-									<input type="hidden" name="gameid" id="gameid" value=" {{ $game->id }}">
-									<button type="submit" class="btn">Quitar</button>
-								</form>
-							</div> -->
 							<div class="container-fluid">
 							<div class="col-md-6">
 								<table class="table table-striped" id="wishlist-table">
@@ -96,10 +67,5 @@
 						@endif
 					@endforeach
 			</div>
-
-
-
-
 </div>
-
 @endsection

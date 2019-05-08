@@ -26,7 +26,9 @@
    background-size: 100vw auto;
  }
 
-
+#content{
+  height: 100% !important;
+}
 
  #app{
    height: 100%;
@@ -77,10 +79,16 @@
     max-width:100%;
 }
 
+.gamerow{
+    border-top: none !important;
+    border: none !important;
+}
+
 .gamerow td{
     white-space: nowrap;  /** added **/
     color: #f9d740;
     max-width:100%;
+    background-color: rgba(75,75,75,0.2);
 }
 
 .gamerow td:last-child{
@@ -217,14 +225,198 @@ nav > .container{
 }
 
 .game-image{
-  max-width: 12vw;
-  height: auto;
+  max-width: auto;
+  height: 8em;
 }
 
 .game-image-container{
   width: 1%;
   white-space:nowrap;
 }
+
+.catalogue-title{
+  font-size: 1.5em;
+}
+
+.catalogue-synopsis{
+  font-size: 0.75em;
+  text-overflow: ( clip | ellipsis | <_string_> );
+  overflow:hidden;
+}
+
+.catalogue-row{
+  max-height: 0.4em !important;
+}
+
+/* Library CSS */
+
+.library-row{
+  margin-bottom: 20px;
+}
+
+.library-row div{
+  max-height: 10vh;
+}
+
+.library-title{
+  vertical-align: center !important;
+}
+
+.library-logo{
+  height:10vh;
+  widht:auto;
+}
+
+.library-code{
+  vertical-align: center !important;
+  text-align: right;
+}
+
+/*Cart CSS*/
+
+#cart-table{
+
+}
+
+.pay-menu{
+    background-color: rgba(15,15,15,0.75);
+    height: 100%;
+    text-align:right !important;
+}
+
+.cart-title{
+    font-size:1.2em;
+}
+
+#cartcontainer{
+  height: 100%
+}
+
+.buy-button{
+  position: relative;
+
+  display: block;
+  margin: 30px auto;
+  padding: .75em 1em;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+  background-color: #3bcc46;
+  color: #ecf0f1;
+
+  transition: background-color .3s;
+}
+
+.buy-button:hover, .buy-button:focus {
+  background-color: #3bcc46;
+}
+
+.buy-button > * {
+  position: relative;
+}
+
+.buy-button span {
+  display: block;
+  padding: 24px 48px;
+}
+
+.buy-button:before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, .3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.buy-button:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+
+.cart-button{
+  position: relative;
+
+  display: block;
+  margin: 30px auto;
+  padding: .75em 1em;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+  background-color: #5B2C70;
+  color: #ecf0f1;
+
+  transition: background-color .3s;
+}
+
+.cart-button:hover, .cart-button:focus {
+  background-color: #f9d740;
+}
+
+.cart-button > * {
+  position: relative;
+}
+
+.cart-button span {
+  display: block;
+  padding: 24px 48px;
+}
+
+.cart-button:before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, .3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.cart-button:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
 
 /* Carousel CSS */
 
