@@ -34,9 +34,10 @@
 
 			@endif
 
-				@if(Auth::user()->role == 2)
+			@if(Auth::user()->role == 2)
 
-                      <a class="dropdown-item" href="/gameseller/{{ Auth::user()->id }}">Mis juegos en venta</a>
+                <a class="list-group-item inmenu" href="/gameseller/{{ Auth::user()->id }}">
+                {{ __('My uploaded games') }}</a>
 				<a class="list-group-item inmenu" href="/salesreports">
 				{{ __('Sales Reports') }}</a>
 				<a class="list-group-item inmenu" href="/creategame">
@@ -44,8 +45,21 @@
 				<a class="list-group-item inmenu" href="/editgame">
 				{{ __('Edit Game') }}</a>				
 
-        @endif
-        @endguest
+        	@endif
+
+        	@if(Auth::user()->role == 0)
+
+        	<a class="list-group-item inmenu" href="/">
+        	{{ __('Users List') }}</a>
+        	<a class="list-group-item inmenu" href="/publisherlist">
+        	{{ __('Publishers List') }}</a>
+        	<a class="list-group-item inmenu" href="/">
+        	{{ __('Games List') }}</a>
+        	<a class="list-group-item inmenu" href="/">
+        	{{ __('Transactions List') }}</a>
+        	@endif
+
+        	@endguest
 
 		</div>
 	</div>

@@ -61,6 +61,9 @@ Route::group(['middleware' => 'publisher'], function(){
 
 //Place routes for admins here here
 Route::group(['middleware' => 'admin'], function(){
-
+	Route::get('/publisherlist', 'AdminController@getpublishers');
+	Route::get('/editpublisher', 'AdminController@editpublisher');
+	Route::post('/editpublisher/finished', 'AdminController@editpublisherinfo');
+	
 
 });

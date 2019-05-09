@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Game;
+use App\Genre;
 use DB;
 
 class GameSellerController extends Controller
@@ -30,8 +31,10 @@ class GameSellerController extends Controller
 
     	$gameid=$request->input('games');
     	$game = Game::find($gameid);
-    	$genres = DB::table('game_genre')->where('game_id','=',$gameid);
-    	return view('editgametext')->with(compact('game'));
+    	$genres = Genre::all();
+    	$selectedgenres = DB::table('game_genre')->where('game_id','=',$gameid);
+    	return view('editgametext')->with(compact('game','genres','selectedgenres'));
+    	
     }
 
     public function editgame(Request $request){
@@ -64,7 +67,8 @@ class GameSellerController extends Controller
 
 
    	public function showcreategame(){
-   		return view('createGame');
+   		$genres = Genre::all();
+   		return view('createGame')->with(['genres'=>$genres]);
    	}
 
    
@@ -74,21 +78,21 @@ class GameSellerController extends Controller
 			'price' => ['required','numeric'],
 			'description' => ['required'],
 			'name' => ['required'],
-			'synopsis' => ['required'],
-			'genre' => ['required']
+			'synopsis' => ['required']
+			
 		], [
 			'price.required' => 'Insert the game´s price.',
 			'price.numeric' => 'Insert a correct number.',
 			'description.required' => 'Insert the game´s description',
 			'name.required' => 'Insert the game´s name',
-			'synopsis.required' => 'Insert the game´s synopsis.',
-			'genre.required' => 'Insert a genre for the game.'
+			'synopsis.required' => 'Insert the game´s synopsis.'
+			
 		]);
 		$name = $request->input('name');
 		$price = $request->input('price');
 		$description = $request->input('description');
 		$synopsis = $request->input('synopsis');
-		$genre = $request->input('genre');
+		
 		$publisher_id = Auth::id();
 		$game = new Game();
 		$game->name = $name;
@@ -100,9 +104,13 @@ class GameSellerController extends Controller
 		$game->publisher_id = $publisher_id;
 		$game->save();
 		$gameid=$game->id;
-		$genreid = DB::table('genres')->where('name','=',$genre)->value('id');
-		DB::table('game_genre')->insert([['game_id'=>$gameid,'genre_id'=>$genreid]]);
-		
+		if(isset($_POST['genres'])){
+        	if (is_array($_POST['genres'])) {
+             	foreach($_POST['genres'] as $value){
+        			DB::table('game_genre')->insert([['game_id'=>$gameid,'genre_id'=>$value]]);        
+             	}
+          	} 
+   		}
 		return back()->with('notification', 'Juego añadido correctamente.');
 	}
 }

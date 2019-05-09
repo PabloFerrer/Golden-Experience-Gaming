@@ -16,7 +16,7 @@ class AdminMiddleware
     public function handle($request, Closure $next)
     {
         if(auth()->user()->role != 0) //not an admin
-            return redirect('home')
+            return redirect('home');
 
         return $next($request);
     }
