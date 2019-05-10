@@ -62,7 +62,10 @@
                             <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
 
                             <div class="col-md-6">
-                                <input id="role" type="text" class="form-control{{ $errors->has('role') ? ' is-invalid' : '' }}" name="role" required>
+								<select name="role" id="role" required>
+									<option value="1">Client</option>;
+									<option value="2">Publisher</option>
+								</select>
 
                                 @if ($errors->has('role'))
                                     <span class="invalid-feedback" role="alert">
