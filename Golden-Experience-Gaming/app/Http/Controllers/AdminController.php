@@ -17,11 +17,12 @@ class AdminController extends Controller
         return view('publisherlist')->with(['publishers'=>$publishers]);
     }
 
-    public function editpublisher(Request $request)
+    public function editpublisher($id)
     {
-        $publisherid=$request->input('publisherlist');
+        #$publisherid=$request->input('publisherlist');
+
         
-        $publisher= User::find($publisherid);
+        $publisher= User::find($id);
         return view('editpublisher')->with(compact('publisher'));
 
     }

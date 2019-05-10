@@ -25,5 +25,9 @@ class UserController extends Controller
         return view('library')->with(compact('usergames'));
     }
 
+    public function getAllGames(){
+        $games = DB::table('games')->get();
+        return view()
+    }
 
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Genre;
+use Illuminate\Database\Eloquent\Model; 
 
 
 class GenresTableSeeder extends Seeder
