@@ -19,18 +19,14 @@
     </div>
     @endif
 
-    
-    
+
     <select style="display: none;" name="publisherlist" id="publisherlist">
         @foreach($publishers as $publisher)
             <option style="display: none;" value="{{ $publisher->id }}">{{ $publisher->name }}</option>
         @endforeach
     </select>
-    
-    
-</div>
 
-<h3>Lista de publishers :</h3>
+    <h3>Lista de publishers :</h3> 
 
     <table class="table table-striped" id="game-search-table">
     <tbody>
@@ -55,6 +51,24 @@
         @endforeach
     </tbody>
 </table>
+    
+
+
+    <!--<form action="/editpublisher" method="GET">
+    <div>Select a publisher to edit:</div>
+    <select name="publisherlist" id="publisherlist">
+        @foreach($publishers as $publisher)
+            <option value="{{ $publisher->id }}">{{ $publisher->name }}</option>
+        @endforeach
+    </select>
+    <br>
+    <button type="submit" class="btn btn-default">Editar</button>
+    <br>
+    </form>
+    -->
+    
+    </div>
+
 
 
 

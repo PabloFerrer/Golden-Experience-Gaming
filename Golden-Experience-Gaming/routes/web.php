@@ -64,6 +64,12 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('/publisherlist', 'AdminController@getpublishers');
 	Route::get('/editpublisher/{id}', 'AdminController@editpublisher');
 	Route::post('/editpublisher/finished', 'AdminController@editpublisherinfo');
+
+	Route::get('/clientslist', 'AdminController@getclients');
+	Route::get('/editclient', 'AdminController@editclient');
+	Route::post('/editclient/finished', 'AdminController@editclientinfo');	
+
+	Route::get('/gameslist', 'AdminController@getgames');
 	
 
 });

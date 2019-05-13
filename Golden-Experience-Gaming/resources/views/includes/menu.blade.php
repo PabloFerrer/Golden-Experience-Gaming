@@ -49,11 +49,11 @@
 
         	@if(Auth::user()->role == 0)
 
-        	<a class="list-group-item inmenu" href="/">
-        	{{ __('Users List') }}</a>
+        	<a class="list-group-item inmenu" href="/clientslist">
+        	{{ __('Clients List') }}</a>
         	<a class="list-group-item inmenu" href="/publisherlist">
         	{{ __('Publishers List') }}</a>
-        	<a class="list-group-item inmenu" href="/">
+        	<a class="list-group-item inmenu" href="/gameslist">
         	{{ __('Games List') }}</a>
         	<a class="list-group-item inmenu" href="/">
         	{{ __('Transactions List') }}</a>
