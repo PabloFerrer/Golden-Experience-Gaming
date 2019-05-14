@@ -42,15 +42,19 @@
 							 							 </div>
 							 						 </td>
 													 <td>
-														 <form action="/game/{{$game->id}}/add" method="POST">
-					                     {{ csrf_field() }}
-					                     <input type="hidden" name="authid" id="authid"
-					                            value=" {{ Auth::user()->id }}">
-					                     <input type="hidden" name="gameid" id="gameid"
-					                            value=" {{ $game->id }}">
-					                       <button type="submit" class="btn wishlist-button">Add to Cart</button>
-					                   </form>
-														 <form action="/wishlist/remove" method="POST">
+														 @if ($game->pivot->on_cart == 1)
+								 					 		 <p>Aleady on cart</p><br>
+							 							 @else
+															 <form action="/game/{{$game->id}}/add" method="POST">
+						                     {{ csrf_field() }}
+						                     <input type="hidden" name="authid" id="authid"
+						                            value=" {{ Auth::user()->id }}">
+						                     <input type="hidden" name="gameid" id="gameid"
+						                            value=" {{ $game->id }}">
+						                       <button type="submit" class="btn wishlist-button">Add to Cart</button>
+						                   </form>
+														 @endif
+														<form action="/wishlist/remove" method="POST">
 						 									{{ csrf_field() }}
 						 									<input type="hidden" name="authid"
 																		 id="authid" value=" {{ Auth::user()->id }}">
