@@ -27,7 +27,7 @@ class UserController extends Controller
 
     public function getAllGames(){
         $games = DB::table('games')->get();
-        return view()
+        return view();
     }
 
 }

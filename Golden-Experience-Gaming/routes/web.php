@@ -66,10 +66,11 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::post('/editpublisher/finished', 'AdminController@editpublisherinfo');
 
 	Route::get('/clientslist', 'AdminController@getclients');
-	Route::get('/editclient', 'AdminController@editclient');
+	Route::get('/editclient/{id}', 'AdminController@editclient');
 	Route::post('/editclient/finished', 'AdminController@editclientinfo');	
 
 	Route::get('/gameslist', 'AdminController@getgames');
 	
+	Route::get('/transactionlist', 'AdminController@gettransactions');
 
 });

@@ -28,7 +28,7 @@
 
     <h3>Lista de publishers :</h3> 
 
-    <table class="table table-striped" id="game-search-table">
+    <table class="table table-striped textcolor" id="game-search-table">
     <tbody>
         <tr>
             <td>ID</td>

@@ -55,7 +55,7 @@
         	{{ __('Publishers List') }}</a>
         	<a class="list-group-item inmenu" href="/gameslist">
         	{{ __('Games List') }}</a>
-        	<a class="list-group-item inmenu" href="/">
+        	<a class="list-group-item inmenu" href="/transactionlist">
         	{{ __('Transactions List') }}</a>
         	@endif
 

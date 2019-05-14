@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Game;
+use App\Transaction;
 
 class AdminController extends Controller
 {
@@ -58,11 +59,9 @@ public function getclients()
         return view('clientslist')->with(['clients'=>$clients]);
     }
 
-    public function editclient(Request $request)
+    public function editclient($id)
     {
-        $clientid=$request->input('clientlist');
-        
-        $client= User::find($clientid);
+        $client= User::find($id);
         return view('editclient')->with(compact('client'));
 
     }
@@ -93,5 +92,11 @@ public function getclients()
     public function getgames(){
         $games = Game::all();
         return view('gameslist')->with(compact('games'));
+    }
+
+    public function gettransactions(){
+        $transactions = Transaction::all();
+        return view ('transactionlist')->with(compact('transactions'));
+
     }
 }

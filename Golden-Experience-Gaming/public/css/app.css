@@ -528,3 +528,6 @@ nav > .container{
 
   transition: width .2s ease-out, padding-top .2s ease-out;
 }
+.textcolor{
+	color: red;
+}
