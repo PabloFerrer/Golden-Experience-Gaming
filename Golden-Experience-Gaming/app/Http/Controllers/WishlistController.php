@@ -20,7 +20,7 @@ class WishlistController extends Controller
 		$authid = $request->input('authid');
 		$gameid = $request->input('gameid');
 		
-		DB::update('update game_user set on_cart = 1 where user_id = ? and game_id = ? and owned=2 limit 1', [$authid, $gameid]);
+		DB::update('update game_user set on_cart = 1 where user_id = ? and game_id = ? and owned=2 and on_cart = 0 limit 1', [$authid, $gameid]);
 
 		return back()->with('notification', 'Añadido al carrito.');
 	}

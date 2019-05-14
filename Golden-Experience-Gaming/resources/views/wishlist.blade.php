@@ -45,7 +45,7 @@
 														 @if ($game->pivot->on_cart == 1)
 								 					 		 <p>Aleady on cart</p><br>
 							 							 @else
-															 <form action="/game/{{$game->id}}/add" method="POST">
+															 <form action="/wishlist/{{$game->id}}/add" method="POST">
 						                     {{ csrf_field() }}
 						                     <input type="hidden" name="authid" id="authid"
 						                            value=" {{ Auth::user()->id }}">
