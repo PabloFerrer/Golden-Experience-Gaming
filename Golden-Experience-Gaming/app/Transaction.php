@@ -13,10 +13,10 @@ class Transaction extends Model
     ];
 
     public function user(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'buyer_id');
     }
 
     public function game(){
-        return $this->belongsTo('App\Game');
+        return $this->belongsTo('App\Game', 'game_id');
     }
 }

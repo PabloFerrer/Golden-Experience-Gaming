@@ -30,7 +30,7 @@
             <td>PRICE</td>
             <td>DESCRIPTION</td>
             <td>SYNOPSIS</td>
-            <td>PUBLISHERID</td>
+            <td>PUBLISHER</td>
         </tr>
         @foreach($games as $game)
         <tr class="">
@@ -50,7 +50,7 @@
             <p style="color:#FF0000" >{{ $game->synopsis }}</p>
             </td>        
             <td>
-            <p style="color:#FF0000" >{{ $game->publisher_id }}</p>
+            <p style="color:#FF0000" >{{ $game->publisher_id }}: {{$game->publisher->name}}</p>
             </td>            
             <td>
             </td>

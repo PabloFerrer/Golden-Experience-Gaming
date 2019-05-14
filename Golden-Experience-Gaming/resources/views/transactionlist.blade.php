@@ -27,8 +27,8 @@
         <tr>
             <td>ID</td>
             <td>AMOUNT</td>
-            <td>BUYER_ID</td>
-            <td>GAME_ID</td>
+            <td>AGENTS</td>
+            <td>GAMES</td>
         </tr>
         @foreach($transactions as $transaction)
         <tr class="">
@@ -39,10 +39,23 @@
             <p style="color:#FF0000" >{{ $transaction->amount }}</p>
             </td>
             <td>
-            <p style="color:#FF0000" >{{ $transaction->buyer_id }}</p>
+            <p style="color:#FF0000" >{{$transaction->buyer_id}}: {{ $transaction->user->name }}</p>
             </td>
             <td>
-            <p style="color:#FF0000" >{{ $transaction->game_id }}</p>
+			@isset ($transaction->game->name)
+				@if ($transaction->user->role == 1)
+					<p style="color:#FF0000" >{{ $transaction->game_id }}: {{ $transaction->game->name }} (Client)</p>
+				@else
+					<p style="color:#FF0000" >{{ $transaction->game_id }}: {{ $transaction->game->name }} (Publisher)</p>
+				@endif
+			
+			@else
+					@if ($transaction->user->role == 1)
+						<p style="color:#FF0000" >Client added money</p>
+					@else
+						<p style="color:#FF0000" >Publisher retrieved money</p>
+					@endif
+			@endisset
             </td>                        
             <td>
             </td>            
