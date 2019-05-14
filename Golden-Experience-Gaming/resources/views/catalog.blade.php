@@ -9,23 +9,23 @@
         <th scope="col" colspan=6>Game Catalogue</th>
       </tr>
     </thead>
-    @foreach ($indexgames as $game)
-      @if ($game->id % 3 == 1)
+    @for($i = 0; $i < count($indexgames); $i++)
+      @if ($i % 3 == 0)
         <tr class="catalogue-row">
       @endif
           <td class="game-image-container">
-            <a href="/game/{{$game->id}}">
-              <img src="{{env('IMAGE_SERVER')}}{{$game->image_url}}" class="game-image">
+            <a href="/game/{{$indexgames[$i]->id}}">
+              <img src="{{env('IMAGE_SERVER')}}{{$indexgames[$i]->image_url}}" class="game-image">
             </a>
           </td>
           <td>
-            <h3 class="catalogue-title">{{ $game->name }}</h3>
-            <p class="catalogue-synopsis">{{ $game->synopsis }}</p>
+            <h3 class="catalogue-title">{{ $indexgames[$i]->name }}</h3>
+            <p class="catalogue-synopsis">{{ $indexgames[$i]->synopsis }}</p>
           </td>
-      @if ($game->id % 3 == 0)
+      @if ($i % 3 == 2)
         </tr>
       @endif
-    @endforeach
+    @endfor
   </table>
 
     <!-- <div class="row justify-content-center">
