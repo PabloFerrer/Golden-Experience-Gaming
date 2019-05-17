@@ -28,9 +28,9 @@
 		<div class="addfunds">
 			<h2>¿Cómo desea añadir fondos?</h2>
 			<form action="">
-			  <input type="radio" name="method" value="mastercard" required> MasterCard<br>
-			  <input type="radio" name="method" value="visa"> Visa<br>
-			  <input type="radio" name="method" value="paypal"> PayPal
+			  <input type="radio" name="method" value="mastercard" required> MasterCard <i class="fab fa-cc-mastercard"></i><br>
+			  <input type="radio" name="method" value="visa"> Visa <i class="fab fa-cc-visa"></i><br>
+			  <input type="radio" name="method" value="paypal"> PayPal <i class="fab fa-cc-paypal"></i>
 			</form>
 
 			<h2>Inserte la cantidad que desea agregar</h2>
