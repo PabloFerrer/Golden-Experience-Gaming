@@ -24,7 +24,7 @@
                 @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">
-                        {{ __('Login') }}</a>
+                        {{ __('Login') }}  <i class="fas fa-sign-in-alt"></i></a>
                     </li>
                     @if (Route::has('register'))
                     <li class="nav-item">
@@ -43,7 +43,7 @@
 							<a class="dropdown-item" href="{{ route('logout') }}"
                               onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();">
-                              {{ __('Logout') }}</a>
+                              {{ __('Logout') }}  <i class="fas fa-sign-out-alt"></i></a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}</form>
@@ -59,7 +59,7 @@
 							</a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownWallet">
 								<a class="dropdown-item" href="{{ route('wallet') }}">
-								{{ __('Añadir fondos') }}</a>
+								{{ __('Añadir fondos') }}  <i class="fas fa-wallet"></i></a>
 							</div>
 						</li>
 
@@ -78,7 +78,7 @@
 							</a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownWallet">
 								<a class="dropdown-item" href="{{ route('royalties') }}">
-								{{ __('Retirar fondos') }}</a>
+								{{ __('Retirar fondos') }}  <i class="fas fa-cash-register"></i></a>
 							</div>
 						</li>	
 					@endif
