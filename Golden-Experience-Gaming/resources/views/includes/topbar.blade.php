@@ -37,21 +37,8 @@
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            @if(Auth::user()->role == 1)
-								<a class="dropdown-item" href="{{ route('cart') }}">
-								{{ __('Ver carrito') }}</a>
-
-								<a class="dropdown-item" href="{{ route('wallet') }}">
-								{{ __('Añadir fondos') }}</a>
-							@endif
-
-							@if(Auth::user()->role == 2)
-								<a class="dropdown-item" href="{{ route('royalties') }}">
-								{{ __('Retirar fondos') }}</a>
-							@endif
-
+						
+						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
 							<a class="dropdown-item" href="{{ route('logout') }}"
                               onclick="event.preventDefault();
@@ -62,9 +49,40 @@
                             {{ csrf_field() }}</form>
                         </div>
                     </li>
+					
 
-                    <li id="navmoney" class="nav-item">
-                    {{ Auth::user()->wallet }}</li>
+					@if(Auth::user()->role==1)
+						<li class="nav-item dropdown">
+							<a id="navbarDropdownWallet" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+								
+								{{ Auth::user()->wallet }} <i class="fas fa-coins"></i><span class="caret"></span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownWallet">
+								<a class="dropdown-item" href="{{ route('wallet') }}">
+								{{ __('Añadir fondos') }}</a>
+							</div>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="{{ route('cart') }}">
+							<i class="fas fa-shopping-cart"></i></a>
+						</li>
+					@endif
+					
+					@if(Auth::user()->role==2)
+						<li class="nav-item dropdown">
+							<a id="navbarDropdownWallet" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+								
+								{{ Auth::user()->wallet }} <i class="fas fa-coins"></i><span class="caret"></span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownWallet">
+								<a class="dropdown-item" href="{{ route('royalties') }}">
+								{{ __('Retirar fondos') }}</a>
+							</div>
+						</li>	
+					@endif
+					
                 @endguest
             </ul>
         </div>
