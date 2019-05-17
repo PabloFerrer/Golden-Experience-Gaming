@@ -20,19 +20,15 @@
     @endif
 
 
-    <select style="display: none;" name="publisherlist" id="publisherlist">
-        @foreach($publishers as $publisher)
-            <option style="display: none;" value="{{ $publisher->id }}">{{ $publisher->name }}</option>
-        @endforeach
-    </select>
 
-    <h3>Lista de publishers :</h3> 
+
+    <h3>Publishers list :</h3> 
 
     <table class="table table-striped textcolor" id="game-search-table">
     <tbody>
         <tr>
             <td>ID</td>
-            <td>NOMBRE</td>
+            <td>NAME</td>
         </tr>
         @foreach($publishers as $publisher)
         <tr class="">
@@ -44,7 +40,7 @@
             </td>
             <td>
             
-            <a href="/editpublisher/{{$publisher->id}}"> Editar </a>
+            <a href="/editpublisher/{{$publisher->id}}"><i class="fas fa-edit"></i></a>
 
             </td>
         </tr>

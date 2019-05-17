@@ -45,7 +45,7 @@
             </td>
             <td>
             
-            <a href="/editclient/{{$client->id}}"> Editar </a>
+            <a href="/editclient/{{$client->id}}"><i class="fas fa-edit"></i></a>
 
             </td>
         </tr>

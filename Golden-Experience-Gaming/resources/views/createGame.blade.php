@@ -23,19 +23,19 @@
         {{ csrf_field() }}
     <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name" value="" name="name">
+        <input type="text" class="form-control" id="name" value="{{ old('name')}}" name="name">
     </div>
     <div class="form-group">
         <label for="price">Price:</label>
-        <input type="int" class="form-control" id="price" value="" name="price">
+        <input type="int" class="form-control" id="price" value="{{ old('price')}}" name="price">
     </div>
     <div class="form-group">
         <label for="description">Description:</label>
-        <input type="text" class="form-control" name="description" id="description" value="">
+        <input type="text" class="form-control" name="description" id="description" value="{{ old('description')}}">
     </div>
     <div class="form-group">
         <label for="synopsis">Synopsis:</label>
-        <input type="text" class="form-control" id="synopsis" value="" name="synopsis">
+        <input type="text" class="form-control" id="synopsis" value="{{ old('synopsis')}}" name="synopsis">
     </div>
     <div class="form-group">
     @foreach($genres as $genre)

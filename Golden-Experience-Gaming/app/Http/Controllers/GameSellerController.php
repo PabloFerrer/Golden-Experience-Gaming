@@ -27,12 +27,12 @@ class GameSellerController extends Controller
     	return view('editgame')->with(['games'=>$games]);
     }
 
-    public function editgamemenu(Request $request){
+    public function editgamemenu($id){
 
-    	$gameid=$request->input('games');
-    	$game = Game::find($gameid);
+    	
+    	$game = Game::find($id);
     	$genres = Genre::all();
-    	$selectedgenres = DB::table('game_genre')->where('game_id','=',$gameid);
+    	$selectedgenres = DB::table('game_genre')->where('game_id','=',$id);
     	return view('editgametext')->with(compact('game','genres','selectedgenres'));
     	
     }

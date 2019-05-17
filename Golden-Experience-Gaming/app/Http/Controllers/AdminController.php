@@ -97,6 +97,5 @@ public function getclients()
     public function gettransactions(){
         $transactions = Transaction::all();
         return view ('transactionlist')->with(compact('transactions'));
-
     }
 }

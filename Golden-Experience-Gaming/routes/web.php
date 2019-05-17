@@ -51,7 +51,7 @@ Route::group(['middleware' => 'publisher'], function(){
 	Route::get('/gameseller/{id_publisher}', 'GameSellerController@index');
 
 	Route::get('/editgame', 'GameSellerController@showeditgame');
-	Route::get('/editgametext', 'GameSellerController@editgamemenu');
+	Route::get('/editgametext/{id}', 'GameSellerController@editgamemenu');
 	Route::post('/editgametext/finished', 'GameSellerController@editgame');
 
 	Route::get('/creategame', 'GameSellerController@showcreategame');

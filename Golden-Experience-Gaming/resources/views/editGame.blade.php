@@ -19,15 +19,31 @@
     </div>
     @endif
 
-    <form action="/editgametext" method="GET">
-    <div>Elija el juego que desea editar</div>
-    <select name="games" id="games">
+
+        <h3>Games list :</h3> 
+
+    <table class="table table-striped textcolor" id="game-search-table">
+    <tbody>
+        <tr>
+            <td>ID</td>
+            <td>NAME</td>
+        </tr>
         @foreach($games as $game)
-            <option value="{{ $game->id }}">{{ $game->name }}</option>
+        <tr class="">
+            <td>
+            <p style="color:#FF0000" >{{ $game->id }}</p>
+            </td>
+            <td>
+            <p style="color:#FF0000" >{{ $game->name }}</p>
+            </td>
+            <td>
+            
+            <a href="/editgametext/{{$game->id}}"><i class="fas fa-edit"></i></a>
+
+            </td>
+        </tr>
         @endforeach
-    </select>
-    <br>
-    <button type="submit" class="btn btn-default">Editar</button>
-    </form>
+    </tbody>
+    </table>
 </div>
 @endsection
