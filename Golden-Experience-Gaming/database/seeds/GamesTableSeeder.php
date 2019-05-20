@@ -25,7 +25,7 @@ class GamesTableSeeder extends Seeder
                           Bespoke coloring book stumptown typewriter, tumeric
                           retro narwhal meh wolf everyday carry.',
         'publisher_id' => 4,
-        'icon_url' => 'default_icon.png',
+        'icon_url' => 'game_1_logo.png',
         'image_url' => 'game_1_image.png'
       ]);
       $game->users()->sync(array(
@@ -50,7 +50,7 @@ class GamesTableSeeder extends Seeder
                           yr salvia mustache vape hashtag man bun street art
                           whatever listicle lyft.',
         'publisher_id' => 4,
-        'icon_url' => 'default_icon.png',
+        'icon_url' => 'game_2_logo.png',
         'image_url' => 'game_2_image.png'
       ]);
       $game->users()->sync(array(
@@ -76,7 +76,7 @@ class GamesTableSeeder extends Seeder
                           yr salvia mustache vape hashtag man bun street art
                           whatever listicle lyft.',
         'publisher_id' => 4,
-        'icon_url' => 'default_icon.png',
+        'icon_url' => 'game_3_logo.png',
         'image_url' => 'game_3_image.png'
       ]);
       $game->users()->sync(array(
@@ -102,7 +102,7 @@ class GamesTableSeeder extends Seeder
                           yr salvia mustache vape hashtag man bun street art
                           whatever listicle lyft.',
         'publisher_id' => 4,
-        'icon_url' => 'default_icon.png',
+        'icon_url' => 'game_4_logo.png',
         'image_url' => 'game_4_image.png'
       ]);
       $game->users()->sync(array(
@@ -126,7 +126,7 @@ class GamesTableSeeder extends Seeder
                           yr salvia mustache vape hashtag man bun street art
                           whatever listicle lyft.',
         'publisher_id' => 4,
-        'icon_url' => 'default_icon.png',
+        'icon_url' => 'game_5_logo.png',
         'image_url' => 'game_5_image.png'
       ]);
       $game->users()->sync(array(
