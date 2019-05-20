@@ -37,7 +37,7 @@
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <i class="fas fa-user-circle"></i><span class="caret"></span>
                         </a>
-						
+
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
 							<a class="dropdown-item" href="{{ route('logout') }}"
@@ -49,12 +49,12 @@
                             {{ csrf_field() }}</form>
                         </div>
                     </li>
-					
+
 
 					@if(Auth::user()->role==1)
 						<li class="nav-item dropdown">
 							<a id="navbarDropdownWallet" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-								
+
 								{{ Auth::user()->wallet }} <i class="fas fa-coins"></i><span class="caret"></span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownWallet">
@@ -63,26 +63,26 @@
 							</div>
 						</li>
 
-						
+
 						<li class="nav-item">
 							<a class="nav-link" href="{{ route('cart') }}">
 							<i class="fas fa-shopping-cart"></i></a>
 						</li>
 					@endif
-					
+
 					@if(Auth::user()->role==2)
 						<li class="nav-item dropdown">
 							<a id="navbarDropdownWallet" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-								
+
 								{{ Auth::user()->wallet }} <i class="fas fa-coins"></i><span class="caret"></span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownWallet">
 								<a class="dropdown-item" href="{{ route('royalties') }}">
 								{{ __('Retirar fondos') }}  <i class="fas fa-cash-register"></i></a>
 							</div>
-						</li>	
+						</li>
 					@endif
-					
+
                 @endguest
             </ul>
         </div>

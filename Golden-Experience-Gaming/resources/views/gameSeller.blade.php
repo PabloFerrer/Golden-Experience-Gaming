@@ -2,30 +2,30 @@
 
 @section('content')
 
-  <table class="table borderless py-4">
+  <table class="table borderless py-4" id="uploaded-games-table">
 
     <thead>
       <tr>
-        <th scope="col" colspan=6>My Game Catalogue</th>
+        <th scope="col" colspan=6>My Games</th>
       </tr>
     </thead>
-    @foreach ($indexgames as $game)
-      @if ($game->id % 3 == 0)
+    @for($i = 0; $i < count($indexgames); $i++)
+      @if ($i % 3 == 0)
         <tr>
       @endif
           <td class="game-image-container">
-            <a href="/game/{{$game->id}}">
-              <img src="{{env('IMAGE_SERVER')}}{{$game->image_url}}" class="game-image">
+            <a href="/game/{{$indexgames[$i]->id}}">
+              <img src="{{env('IMAGE_SERVER')}}{{$indexgames[$i]->image_url}}" class="game-image">
             </a>
           </td>
           <td>
-            <h3>{{ $game->name }}</h3>
-            <p>{{ $game->synopsis }}</p>
+            <h3 class="publisher-catalogue-title">{{ $indexgames[$i]->name }}</h3>
+            <p class="publisher-catalogue-synopsis">{{ $indexgames[$i]->synopsis }}</p>
           </td>
-      @if ($game->id % 3 == 2)
+      @if ($i % 3 == 2)
         </tr>
       @endif
-    @endforeach
+    @endfor
   </table>
 
     <!-- <div class="row justify-content-center">

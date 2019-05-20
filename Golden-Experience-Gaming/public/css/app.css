@@ -531,3 +531,109 @@ nav > .container{
 .textcolor{
 	color: red;
 }
+
+/*Create game CSS*/
+
+#thumbnail{
+  	color: #F3D60E;
+}
+
+#cover{
+  	color: #F3D60E;
+}
+
+#description{
+  height:12em;
+}
+
+.genre-list{
+  margin-right: 0.5em;
+}
+
+.submit-game-button {
+  position: relative;
+
+  display: block;
+  padding: .75em 1em;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+  background-color: #5B2C70;
+  color: #ecf0f1;
+
+  transition: background-color .3s;
+}
+
+.submit-game-button:hover, .submit-game-button:focus {
+  background-color: #f9d740;
+}
+
+.submit-game-button > * {
+  position: relative;
+}
+
+.submit-game-button span {
+  display: block;
+  padding: 24px 48px;
+}
+
+.submit-game-button:before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, .3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.submit-game-button:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+/* Sales Report CSS */
+#sales-table{
+    color: #F3D60E;
+}
+
+
+
+#uploaded-games-table{
+  /* font-size:0.75em */
+}
+
+.publisher-catalogue-title{
+  font-size: 1.5em;
+}
+
+.publisher-catalogue-synopsis{
+  font-size: 0.75em;
+  text-overflow: ( clip | ellipsis | <_string_> );
+  overflow:hidden;
+}
+
+/* Login CSS */
+
+#login-card{
+  /* background-color: #5B2C70; */
+}

@@ -23,23 +23,32 @@
 
     <form action="/editgametext/finished" method="POST">
         {{ csrf_field() }}
-    <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name" value="{{ $game->name }}" name="name">
-    </div>
-    <div class="form-group">
-        <label for="price">Price:</label>
-        <input type="int" class="form-control" id="price" value="{{ $game->price }}" name="price">
-    </div>
-    <div class="form-group">
-        <label for="description">Description:</label>
-        <input type="text" class="form-control" name="description" id="description" value="{{ $game->description }}">
-    </div>
-    <div class="form-group">
-        <label for="synopsis">Synopsis:</label>
-        <input type="text" class="form-control" id="synopsis" value="{{ $game->synopsis }}" name="synopsis">
-    </div>
-    
+      <div class="row">
+        <div class="form-group col-2">
+            <label for="name"><strong>Name:</strong></label>
+            <input type="text" class="form-control" id="name"
+                   value="{{ $game->name }}" name="name">
+        </div>
+        <div class="form-group col-6">
+            <label for="synopsis"><strong>Synopsis:</strong></label>
+            <input type="text" class="form-control" id="synopsis"
+                    value="{{ $game->synopsis }}" name="synopsis">
+        </div>
+        <div class="form-group col-2">
+            <label for="price"><strong>Price:</strong></label>
+            <input type="int" class="form-control" id="price"
+                   value="{{ $game->price }}" name="price">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-8">
+            <label for="description"><strong>Description:</strong></label>
+            <textarea type="text" class="form-control" name="description"
+                      id="description" value="">{{ $game->description }}
+            </textarea>
+        </div>
+      </div>
+
 
 
      <!--<div class="form-group">
@@ -47,8 +56,12 @@
         <input type="checkbox" name="genres[]" value="{{$genre->id}}" > <label>{{$genre->name}}</label>
     @endforeach
     </div>-->
-        <input type="hidden" value="{{$game->id}}" id="id" name="id">
-    <button type="submit" class="btn btn-default">Edit</button>
+    <input type="hidden" value="{{$game->id}}" id="id" name="id">
+    <div class="row">
+      <div class="col-1 pt-2">
+          <button type="submit" class="btn btn-default submit-game-button">Edit</button>
+      </div>
+    </div>
     </form>
 </div>
 
