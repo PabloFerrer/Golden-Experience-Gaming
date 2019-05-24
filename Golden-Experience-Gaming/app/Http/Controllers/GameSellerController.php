@@ -32,8 +32,7 @@ class GameSellerController extends Controller
 
     	$game = Game::find($id);
     	$genres = Genre::all();
-		$selectedgenres = DB::table('game_genre')->select('genre_id')->where('game_id','=',$id)->get()->toArray();
-    
+		$selectedgenres = DB::table('game_genre')->select('genre_id')->where('game_id','=',$id)->get()->pluck('genre_id')->toArray();
     	return view('editgametext')->with(compact('game','genres','selectedgenres'));
 
     }

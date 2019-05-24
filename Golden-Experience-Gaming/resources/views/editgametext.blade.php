@@ -57,7 +57,7 @@
       @foreach($genres as $genre)
         <span class="genre-list">
           <label>{{$genre->name}}</label>
-          @if(in_array($genre,$selectedgenres))
+          @if(in_array($genre->id,$selectedgenres))
           <input type="checkbox" name="genres[]" value="{{$genre->id}}" checked>
           @else
           <input type="checkbox" name="genres[]" value="{{$genre->id}}">
