@@ -50,13 +50,24 @@
       </div>
 
 
-
-     <!--<div class="form-group">
-    @foreach($genres as $genre) CUANDO PUEDA LO ARREGLO, FUCKING BULLSHIT
-        <input type="checkbox" name="genres[]" value="{{$genre->id}}" > <label>{{$genre->name}}</label>
-    @endforeach
-    </div>-->
     <input type="hidden" value="{{$game->id}}" id="id" name="id">
+    <div class="form-group col-4">
+      <p><strong>Genres:</strong></p>
+      <div class="container">
+      @foreach($genres as $genre)
+        <span class="genre-list">
+          <label>{{$genre->name}}</label>
+          @if(in_array($genre,$selectedgenres))
+          <input type="checkbox" name="genres[]" value="{{$genre->id}}" checked>
+          @else
+          <input type="checkbox" name="genres[]" value="{{$genre->id}}">
+
+          @endif
+        </span>
+      @endforeach
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-1 pt-2">
           <button type="submit" class="btn btn-default submit-game-button">Edit</button>
