@@ -66,6 +66,14 @@ class GameSellerController extends Controller
 		$game->description = $description;
 		$game->synopsis = $synopsis;
 		$game->save();
+		DB::table('game_genre')->where('game_id', $game->id)->delete();
+		if(isset($_POST['genres'])){
+        	if (is_array($_POST['genres'])) {
+             	foreach($_POST['genres'] as $value){
+        			DB::table('game_genre')->insert([['game_id'=>$game->id,'genre_id'=>$value]]);
+             	}
+          	}
+   		}
 		return back()->with('notification', 'Juego editado correctamente.');
     }
 
