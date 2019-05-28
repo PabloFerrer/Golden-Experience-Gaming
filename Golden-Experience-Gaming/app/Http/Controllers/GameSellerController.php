@@ -12,6 +12,11 @@ class GameSellerController extends Controller
 {
     public function index($publisher_id){
 
+    	//verificar 
+    	if($publisher_id != Auth::user()->id){
+    		return view('error');
+    	}
+
 		#$indexgames = DB::table('games')->select('name')->where('publisher_id', '=', $publisher_id )->get();
 		$indexgames = Game::where('publisher_id',$publisher_id)->get();
 
@@ -32,7 +37,7 @@ class GameSellerController extends Controller
 
     	$game = Game::find($id);
     	$genres = Genre::all();
-		$selectedgenres = DB::table('game_genre')->select('genre_id')->where('game_id','=',$id)->get()->pluck('genre_id')->toArray();
+    	$selectedgenres = DB::table('game_genre')->select('genre_id')->where('game_id','=',$id)->get()->pluck('genre_id')->toArray();
     	return view('editgametext')->with(compact('game','genres','selectedgenres'));
 
     }
