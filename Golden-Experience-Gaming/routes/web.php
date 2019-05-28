@@ -22,6 +22,8 @@ Route::any('/search',function(){
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/game/{id}', 'GameController@index');
+Route::get('/faq', 'FooterController@index');
+Route::get('/contact', 'FooterController@contact');
 
 //Place routes for clients here
 Route::group(['middleware' => 'client'], function(){

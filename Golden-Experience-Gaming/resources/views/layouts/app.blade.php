@@ -38,6 +38,7 @@
   			 </div>
   	  </div>
     </div>
+    <footer>@include('includes.footer')</footer> 
     <!-- </div> -->
 </body>
 </html>
