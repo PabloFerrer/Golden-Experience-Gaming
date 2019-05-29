@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
+			@if(!empty($successMsg))
+			  <div class="alert alert-danger"> {{ $successMsg }}</div>
+			@endif
             <div class="py-4 homepage">
 				<div id="bannercarousel" class="carousel slide" data-ride="carousel">
 

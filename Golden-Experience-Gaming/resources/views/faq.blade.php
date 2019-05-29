@@ -17,7 +17,7 @@
 			                	Buena pregunta
 			                </td>
 			            </tr>
-			            <tr>
+			            <tr class="gamerow">
 			            	<td>
 			                	¿ Puedo valorar un juego sin estar registrado ?
                       		</td>
@@ -25,7 +25,7 @@
 			                	Excelente pregunta
 			                </td>
 			            </tr>
-			            <tr>
+			            <tr class="gamerow">
 			            	<td>
 			                	¿ Los juegos son físicos o digitales ?
                       		</td>

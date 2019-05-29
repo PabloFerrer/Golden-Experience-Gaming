@@ -14,7 +14,7 @@ class GameSellerController extends Controller
 
     	//verificar 
     	if($publisher_id != Auth::user()->id){
-    		return view('error');
+    		return view('index')->with('successMsg','No puedes ver juegos de otra persona , es ilegal .');
     	}
 
 		#$indexgames = DB::table('games')->select('name')->where('publisher_id', '=', $publisher_id )->get();
