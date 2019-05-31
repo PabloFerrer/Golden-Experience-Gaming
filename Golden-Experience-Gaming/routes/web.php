@@ -26,7 +26,7 @@ Route::get('/faq', 'FooterController@index');
 Route::get('/contact', 'FooterController@contact');
 
 //Place routes for clients here
-Route::group(['middleware' => 'client'], function(){
+Route::group(['middleware' => ['auth', 'client']], function(){
 	Route::get('/wallet', 'WalletController@index')->name('wallet');
 	Route::post('/wallet/edit', 'WalletController@update');
 
@@ -46,7 +46,7 @@ Route::group(['middleware' => 'client'], function(){
 });
 
 //Place routes for publishers here here
-Route::group(['middleware' => 'publisher'], function(){
+Route::group(['middleware' => ['auth','publisher']], function(){
 	Route::get('/royalties', 'WalletController@royalties')->name('royalties');
 	Route::post('/royalties/retrieve', 'WalletController@retrieve');
 	Route::get('/salesreports', 'SalesController@index');
@@ -62,7 +62,7 @@ Route::group(['middleware' => 'publisher'], function(){
 });
 
 //Place routes for admins here here
-Route::group(['middleware' => 'admin'], function(){
+Route::group(['middleware' => ['auth','admin']], function(){
 	Route::get('/publisherlist', 'AdminController@getpublishers');
 	Route::get('/editpublisher/{id}', 'AdminController@editpublisher');
 	Route::post('/editpublisher/finished', 'AdminController@editpublisherinfo');

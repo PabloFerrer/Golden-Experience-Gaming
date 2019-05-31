@@ -16,7 +16,7 @@ class PublisherMiddleware
     public function handle($request, Closure $next)
     {
         if(auth()->user()->role != 2) //not a publisher
-            return redirect('home');
+            return redirect('index');
 
         return $next($request);
     }
