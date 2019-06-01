@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use App\Game;
 use App\Genre;
 use DB;
+
 
 class GameSellerController extends Controller
 {
     public function index($publisher_id){
 
-    	//verificar 
+    	//verificar
     	if($publisher_id != Auth::user()->id){
     		return view('index')->with('successMsg','No puedes ver juegos de otra persona , es ilegal .');
     	}
@@ -108,7 +110,7 @@ class GameSellerController extends Controller
 
     $cover_extension = $request->file('cover')->getClientOriginalExtension();
     $cover_to_store = "cover_".uniqid().'.'.$cover_extension;
-    $thumb_extension = $request->file('thumbnail')->getClientOriginalName();
+    $thumb_extension = $request->file('thumbnail')->getClientOriginalExtension();
     $thumb_to_store = "thumb_".uniqid().'.'.$thumb_extension;
 
 		$publisher_id = Auth::id();

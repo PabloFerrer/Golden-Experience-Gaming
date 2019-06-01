@@ -19,7 +19,7 @@
     </ul>
     </div>
     @endif
-    <form action="/creategame/finished" method="POST">
+    <form action="/creategame/finished" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
       <div class="row">
         <div class="form-group col-2">
