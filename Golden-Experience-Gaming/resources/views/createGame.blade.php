@@ -19,7 +19,8 @@
     </ul>
     </div>
     @endif
-    <form action="/creategame/finished" method="POST" enctype="multipart/form-data">
+    <form action="/creategame/finished" method="POST" role="form"
+          enctype="multipart/form-data">
         {{ csrf_field() }}
       <div class="row">
         <div class="form-group col-2">
@@ -59,10 +60,10 @@
       </div>
       <label for="cover"><strong>Cover Image:</strong></label>
       <input type="file" class="btn btn-default" name="cover" value=""
-             id="cover" accept="image/jpeg, image/png"><br>
+             accept="image/jpeg, image/png"><br>
       <label for="thumbnail"><strong>Icon:</strong></label>
       <input type="file" class="btn btn-default" name="thumbnail" value=""
-             id="thumbnail" accept="image/jpeg, image/png"><br>
+             accept="image/jpeg, image/png"><br>
       <div class="row">
         <div class="col-1 pt-2">
             <button type="submit" class="btn btn-default submit-game-button">Submit</button>
