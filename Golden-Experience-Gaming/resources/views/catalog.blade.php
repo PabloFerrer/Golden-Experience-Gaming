@@ -15,7 +15,7 @@
       @endif
           <td class="game-image-container">
             <a href="/game/{{$indexgames[$i]->id}}">
-              <img src="{{env('IMAGE_SERVER')}}{{$indexgames[$i]->image_url}}" class="game-image">
+              <img src="http://2.137.103.114/GEG/{{$indexgames[$i]->image_url}}" class="game-image">
             </a>
           </td>
           <td>

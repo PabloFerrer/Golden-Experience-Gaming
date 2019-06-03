@@ -19,7 +19,7 @@
 							<div class="bannergame">
 								@isset( $bannergames[0] )
 									<a href="/game/{{$bannergames[0]->id}}">
-									    <img src="{{env('IMAGE_SERVER')}}{{$bannergames[0]->image_url}}" class="game-image" title="{{ $bannergames[0]->name }}">
+									    <img src="http://2.137.103.114/GEG/{{$bannergames[0]->image_url}}" class="game-image" title="{{ $bannergames[0]->name }}">
 									</a>
 								@else
 									NO HAY JUEGO BANNER
@@ -31,7 +31,7 @@
 							<div class="bannergame">
 								@isset( $bestsellinggames[1] )
 									<a href="/game/{{$bannergames[1]->id}}">
-									    <img src="{{env('IMAGE_SERVER')}}{{$bannergames[1]->image_url}}" class="game-image" title="{{ $bannergames[1]->name }}">
+									    <img src="http://2.137.103.114/GEG/{{$bannergames[1]->image_url}}" class="game-image" title="{{ $bannergames[1]->name }}">
 									</a>
 								@else
 									NO HAY JUEGO BANNER
@@ -43,7 +43,7 @@
 							<div class="bannergame">
 								@isset( $bannergames[2] )
 									<a href="/game/{{$bannergames[2]->id}}">
-									    <img src="{{env('IMAGE_SERVER')}}{{$bannergames[2]->image_url}}" class="game-image" title="{{ $bannergames[2]->name }}">
+									    <img src="http://2.137.103.114/GEG/{{$bannergames[2]->image_url}}" class="game-image" title="{{ $bannergames[2]->name }}">
 									</a>
 								@else
 									NO HAY JUEGO BANNER
@@ -55,7 +55,7 @@
 							<div class="bannergame">
 								@isset( $bannergames[3] )
 									<a href="/game/{{$bannergames[3]->id}}">
-									    <img src="{{env('IMAGE_SERVER')}}{{$bannergames[3]->image_url}}" class="game-image" title="{{ $bannergames[3]->name }}">
+									    <img src="http://2.137.103.114/GEG/{{$bannergames[3]->image_url}}" class="game-image" title="{{ $bannergames[3]->name }}">
 									</a>
 								@else
 									NO HAY JUEGO BANNER
@@ -86,11 +86,11 @@
                 <td class="game-in-row">
   							@isset( $bestsellinggames[$i] )
                   <a href="/game/{{$bestsellinggames[$i]->id}}">
-                    <img src="{{env('IMAGE_SERVER')}}{{$bestsellinggames[$i]->image_url}}"
+                    <img src="http://2.137.103.114/GEG/{{$bestsellinggames[$i]->image_url}}"
                          class="game-image" title="{{ $bestsellinggames[$i]->name }}">
                   </a>
   							@else
-  								<img src="{{env('IMAGE_SERVER')}}default_image.png" class="game-image">
+  								<img src="http://2.137.103.114/GEG/default_image.png" class="game-image">
   							@endisset
                 </td>
               @endfor
@@ -108,11 +108,11 @@
                  <td class="game-in-row">
    							@isset( $recentgames[$i] )
                    <a href="/game/{{$recentgames[$i]->id}}">
-                     <img src="{{env('IMAGE_SERVER')}}{{$recentgames[$i]->image_url}}"
+                     <img src="http://2.137.103.114/GEG/{{$recentgames[$i]->image_url}}"
                           class="game-image" title="{{ $recentgames[$i]->name }}">
                    </a>
    							@else
-   								<img src="{{env('IMAGE_SERVER')}}default_image.png" class="game-image" >
+   								<img src="http://2.137.103.114/GEG/default_image.png" class="game-image" >
    							@endisset
                  </td>
                @endfor

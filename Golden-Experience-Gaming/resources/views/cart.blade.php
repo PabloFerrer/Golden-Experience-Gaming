@@ -29,7 +29,7 @@
 						 @if ($game->pivot->on_cart == 1)
 							 <tr class="gamerow">
 									 <td>
-										 <img src="{{env('IMAGE_SERVER')}}{{$game->image_url}}"
+										 <img src="http://2.137.103.114/GEG/{{$game->image_url}}"
 													class="game-image">
 									 </td>
 									 <td>

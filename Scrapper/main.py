@@ -30,11 +30,13 @@ class Game(object):
         with open("temp/" + imgfilename,'wb') as f:
             f.write(urllib.request.urlopen(self.image).read())
 
+        self.image= 'image_' + str(self.id) +'.jpg'
+
         ftp = FTP()
         ftp.connect(FTP_ADDRESS, 21)
         ftp.login(FTP_USERNAME, FTP_PASSWORD)
         fp = open("temp/temporary.jpg", 'rb')
-        ftp.storbinary('STOR image_' + str(self.id) +'.jpg', fp, 1024)
+        ftp.storbinary('STOR ' + self.image, fp, 1024)
         fp.close()
 
 

@@ -23,7 +23,7 @@
 
             	<div class="row">
                 <div class="col-md-7">
-                    <img src="{{env('IMAGE_SERVER')}}{{ $specificgame->image_url}}"
+                    <img src="http://2.137.103.114/GEG/{{ $specificgame->image_url}}"
                          class="game-main-page-image">
                 </div>
             		<div class="col-md-5">

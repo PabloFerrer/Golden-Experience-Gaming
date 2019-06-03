@@ -10,7 +10,7 @@
       @endif
 
         <div class="col-md-1">
-            <img src="{{env('IMAGE_SERVER')}}{{$usergames[$i]->icon_url}}" class="library-logo">
+            <img src="http://2.137.103.114/GEG/{{$usergames[$i]->icon_url}}" class="library-logo">
         </div>
         <div class="col-md-2">
             <h3 class="library-title">{{ $usergames[$i]->name }}</h3>
