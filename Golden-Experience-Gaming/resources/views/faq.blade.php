@@ -14,7 +14,7 @@
 			                	¿ Puedo comprar un juego sin estar registrado ?
                       		</td>
 			                <td>
-			                	Buena pregunta
+			                	Tienes que estar registrado para poder acceder a los servicios de nuestra web.
 			                </td>
 			            </tr>
 			            <tr class="gamerow">
@@ -22,7 +22,7 @@
 			                	¿ Puedo valorar un juego sin estar registrado ?
                       		</td>
                       		<td>
-			                	Excelente pregunta
+			                	Tienes que estar registrado para poder acceder a los servicios de nuestra web.
 			                </td>
 			            </tr>
 			            <tr class="gamerow">
@@ -30,7 +30,7 @@
 			                	¿ Los juegos son físicos o digitales ?
                       		</td>
                       		<td>
-			                	Exquisita pregunta
+			                	Los juegos son digitales
 			                </td>
 			            </tr>
 			            

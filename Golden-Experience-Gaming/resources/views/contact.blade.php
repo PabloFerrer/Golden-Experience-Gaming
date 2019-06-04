@@ -10,7 +10,7 @@
 					<table width="450px">
 					<tr>
 					 <td valign="top">
-					  <label for="first_name">Nombre *</label>
+					  <label for="first_name">Nombre </label>
 
 					 </td>
 					 <br>
@@ -22,7 +22,7 @@
 					<br>
 					<tr>
 					 <td valign="top">
-					  <label for="last_name">Apellido *</label>
+					  <label for="last_name">Apellido </label>
 					 </td>
 					 <td valign="top">
 					  <input  type="text" name="last_name" maxlength="50" size="30">
@@ -30,7 +30,7 @@
 					</tr>
 					<tr>
 					 <td valign="top">
-					  <label for="email">E-mail *</label>
+					  <label for="email">E-mail </label>
 					 </td>
 					 <td valign="top">
 					  <input  type="text" name="email" maxlength="80" size="30">
@@ -46,7 +46,7 @@
 					</tr>
 					<tr>
 					 <td valign="top">
-					  <label for="message">Mensaje *</label>
+					  <label for="message">Mensaje </label>
 					 </td>
 					 <td valign="top">
 					  <textarea  name="message" maxlength="1000" cols="25" rows="6"></textarea>
