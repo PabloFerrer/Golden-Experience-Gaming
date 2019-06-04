@@ -35,7 +35,7 @@
   			      <main id="content">
   			           @yield('content')
   	          </main>
-              <footer>@include('includes.footer')</footer>
+              <!--<footer>@include('includes.footer')</footer>-->
   			 </div>
   	  </div>
     </div>
