@@ -22,7 +22,7 @@
 				</div>
 			@endif
 
-			<h3>Productos en el carrito:</h3>
+			<h3>Products in the cart:</h3>
 			<table class="table table-striped" id="cart-table">
 				 <tbody>
 					 @foreach ( Auth::user()->games  as $game)
@@ -43,7 +43,7 @@
 															 value=" {{ Auth::user()->id }}">
 	 											<input type="hidden" name="gameid" id="gameid"
 															 value=" {{ $game->id }}">
-	 											<button type="submit" class="cart-button">Quitar</button>
+	 											<button type="submit" class="cart-button">Remove</button>
  											</form>
 									 </td>
 							 </tr>
@@ -90,11 +90,11 @@
 
 		<div class="col-md-3 pay-menu">
 			<div class="py-4 cartpay">
-				<h4>Fondos actuales:</h4>
+				<h4>Current funds:</h4>
 				<h4>{{ Auth::user()->wallet }} €</h4>
 
 
-				<h4>Coste del carrito:</h4>
+				<h4>Cart's items cost:</h4>
 				<h4>
 				<?php
 					$total=0;
@@ -105,7 +105,7 @@
 				</h4>
 				<h4>{{ $total }} €</h4>
 
-				<h4>Dinero tras la transacción:</h4>
+				<h4>Money after transaction:</h4>
 				<h4>{{ Auth::user()->wallet - $total}}€</h4>
 
 				@if (Auth::user()->wallet - $total >= 0)
@@ -114,11 +114,11 @@
 					{{ csrf_field() }}
 						<input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
 						<input type="hidden" name="cost" id="cost" value=" {{ $total }}">
-						<button type="submit" class="btn buy-button">Comprar</button>
+						<button type="submit" class="btn buy-button">Buy</button>
 					</form>
 					@endif
 				@else
-					<p>Dinero insuficiente para transacción. Por favor, añada más fondos.</p>
+					<p>Not enough money for the transaction. Please add more funds or remove items from the cart.</p>
 				@endif
 			</div>
 		</div>

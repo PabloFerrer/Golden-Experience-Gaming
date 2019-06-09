@@ -1,6 +1,6 @@
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <div class="card" id="left-menu">
-	<div class="card-header topmenu">Menú</div>
+	<div class="card-header topmenu">Menu</div>
 
 	<div class="card-body inmenu">
 		<div class="list-group">
@@ -8,7 +8,7 @@
 			    {{ csrf_field() }}
 			    <div class="input-group">
 			        <input type="text" class="form-control" name="q"
-							placeholder="Buscar juegos">
+							placeholder="Search games">
 							<span class="input-group-btn">
 			            <button type="submit" class="btn btn-default"><i class="fas fa-search inmenu"></i> </button>
 			        </span>

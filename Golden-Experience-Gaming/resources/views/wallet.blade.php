@@ -21,19 +21,19 @@
 
 
 	<div class="currentwallet">
-		<h2>En estos momentos, cuenta con {{ Auth::user()->wallet }} €</h2>
+		<h2>At the moment you have:  {{ Auth::user()->wallet }} €</h2>
 	</div>
 
 	@if(Auth::user()->role == 1)
 		<div class="addfunds">
-			<h2>¿Cómo desea añadir fondos?</h2>
+			<h2>Select payment method:</h2>
 			<form action="">
 			  <input type="radio" name="method" value="mastercard" checked="checked" > MasterCard <i class="fab fa-cc-mastercard"></i><br>
 			  <input type="radio" name="method" value="visa"> Visa <i class="fab fa-cc-visa"></i><br>
 			  <input type="radio" name="method" value="paypal"> PayPal <i class="fab fa-cc-paypal"></i>
 			</form>
 
-			<h2>Inserte la cantidad que desea agregar</h2>
+			<h2>Insert a quantity you would like to add:</h2>
 
 			<form action="/wallet/edit" method="POST">
 				{{ csrf_field() }}
@@ -51,7 +51,7 @@
 							</div>
 
 
-							<button type="submit" class="btn btn-primary">Guardar</button>
+							<button type="submit" class="btn btn-primary">Save</button>
 
 			</form>
 
@@ -61,23 +61,23 @@
 	@if(Auth::user()->role == 2)
 		@if(Auth::user()->wallet > 0)
 			<div class="retrievefunds">
-				<h2>¿Qué cantidad de dinero desea retirar?</h2>
+				<h2>How much money would you like to widthdraw?</h2>
 
 
 				<form action="/royalties/retrieve" method="POST">
 					{{ csrf_field() }}
-					<h2>Retirar una cantidad específica</h2>
+					<h2>Widthdraw an specific quantity</h2>
 					<input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
 					<input type="text" name="funds" id="funds" value="">
 					<input type="hidden" name="maxfunds" id="maxfunds" value=" {{ Auth::user()->wallet }}">
-					<button type="submit" class="btn btn-primary">Retirar</button>
+					<button type="submit" class="btn btn-primary">Widhdraw</button>
 				</form>
 				<form action="/royalties/retrieve" method="POST">
 					{{ csrf_field() }}
 					<input type="hidden" name="authid" id="authid" value=" {{ Auth::user()->id }}">
 					<input type="hidden" name="funds" id="funds" value=" {{ Auth::user()->wallet }}">
 					<input type="hidden" name="maxfunds" id="maxfunds" value=" {{ Auth::user()->wallet }}">
-					<button type="submit" class="btn btn-primary">Retirar todo el dinero</button>
+					<button type="submit" class="btn btn-primary">Widthdraw all the money</button>
 				</form>
 			</div>
 		@endif
