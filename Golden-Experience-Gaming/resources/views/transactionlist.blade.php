@@ -22,7 +22,7 @@
 
     <h3>Here is the list of all the transactions:</h3>
 
-    <table class="table table-striped textcolor" id="game-search-table">
+    <table class="table table-striped " style="color:#F3D60E" id="game-search-table">
     <tbody>
         <tr>
             <td>ID</td>
@@ -33,27 +33,27 @@
         @foreach($transactions as $transaction)
         <tr class="">
             <td>
-            <p style="color:#FF0000" >{{ $transaction->id }}</p>
+            <p style="color:##F3D60E" >{{ $transaction->id }}</p>
             </td>
             <td>
-            <p style="color:#FF0000" >{{ $transaction->amount }}</p>
+            <p style="color:##F3D60E" >{{ $transaction->amount }}</p>
             </td>
             <td>
-            <p style="color:#FF0000" >{{$transaction->buyer_id}}: {{ $transaction->user->name }}</p>
+            <p style="color:##F3D60E" >{{$transaction->buyer_id}}: {{ $transaction->user->name }}</p>
             </td>
             <td>
 			@isset ($transaction->game->name)
 				@if ($transaction->user->role == 1)
-					<p style="color:#FF0000" >{{ $transaction->game_id }}: {{ $transaction->game->name }} (Client)</p>
+					<p style="color:##F3D60E" >{{ $transaction->game_id }}: {{ $transaction->game->name }} (Client)</p>
 				@else
-					<p style="color:#FF0000" >{{ $transaction->game_id }}: {{ $transaction->game->name }} (Publisher)</p>
+					<p style="color:##F3D60E" >{{ $transaction->game_id }}: {{ $transaction->game->name }} (Publisher)</p>
 				@endif
 			
 			@else
 					@if ($transaction->user->role == 1)
-						<p style="color:#FF0000" >Client added money</p>
+						<p style="color:##F3D60E" >Client added money</p>
 					@else
-						<p style="color:#FF0000" >Publisher retrieved money</p>
+						<p style="color:##F3D60E" >Publisher retrieved money</p>
 					@endif
 			@endisset
             </td>                        

@@ -22,7 +22,7 @@
 
         <h3>Games list :</h3> 
 
-    <table class="table table-striped textcolor" id="game-search-table">
+    <table class="table table-striped" style="color:#F3D60E" id="game-search-table">
     <tbody>
         <tr>
             <td>ID</td>
@@ -31,10 +31,10 @@
         @foreach($games as $game)
         <tr class="">
             <td>
-            <p style="color:#FF0000" >{{ $game->id }}</p>
+            <p style="color:#F3D60E" >{{ $game->id }}</p>
             </td>
             <td>
-            <p style="color:#FF0000" >{{ $game->name }}</p>
+            <p style="color:#F3D60E" >{{ $game->name }}</p>
             </td>
             <td>
             

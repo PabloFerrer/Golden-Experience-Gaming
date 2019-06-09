@@ -29,7 +29,7 @@
 
     <h3>Client's List :</h3> 
 
-    <table class="table table-striped textcolor" id="game-search-table">
+    <table class="table table-striped" style="color:#F3D60E" id="game-search-table">
     <tbody>
         <tr>
             <td>ID</td>
@@ -38,10 +38,10 @@
         @foreach($clients as $client)
         <tr class="">
             <td>
-            <p style="color:#FF0000" >{{ $client->id }}</p>
+            <p style="color:#F3D60E" >{{ $client->id }}</p>
             </td>
             <td>
-            <p style="color:#FF0000" >{{ $client->name }}</p>
+            <p style="color:#F3D60E" >{{ $client->name }}</p>
             </td>
             <td>
             
